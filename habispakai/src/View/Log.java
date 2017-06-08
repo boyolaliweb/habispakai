@@ -53,13 +53,13 @@ public class Log extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Tanggal", "Aktifitas", "User", "Title 4"
+                "id", "Event", "User ID", "Time", "Del"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
