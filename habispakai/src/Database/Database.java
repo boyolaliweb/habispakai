@@ -72,26 +72,26 @@ public class Database {
         return d;
     }
     
-    public void insertUser(long id,String nama,String pass,String email,long user_id){
-        String s = "INSERT INTO `user` (`id`, `nama`, `pass`, `email`) VALUES ("
-                +id+", '"+nama+"', '"+pass+"', '"+email+"');";
-        String x = "\"INSERT INTO `log` (`id`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
-                +(makeidLog()+1)+"', '"+s+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+    public void insertUser(long id,String nama,String pass,String email,String user_id){
+        String z = "jajaja";
+        String s = "INSERT INTO `user` (`id`, `nama`, `pass`, `email`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +id+"', '"+nama+"', '"+pass+"', '"+email+"','0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        String x = "INSERT INTO `log` (`id`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"', 'insert User dengan id "+id+" nama "+nama+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
+            query(s);
             query(x);
-            //query(s);
         } catch (SQLException ex) {
-            System.out.println("2");
             System.out.println(ex);
         }
     }
     
-    public void removeProyek(String id){
-        String s = "delete from log where id = '"+id+"';";
+    public void removeUser(long id,String user_id){
+       String s = "Update User set del = 1,del_on = NOW(),modified_by = "+user_id+", modified_on = NOW() where id = '"+id+"';";
         try {
             query(s);
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        } 
     }
 }
