@@ -29,5 +29,14 @@ public class Aplikasi {
             }
         }return null;
     }
-    
+    public String[][] getListOutUser(){
+        String out[][] = new String[tUser.size()][5];
+        for (int i = 0;i < tUser.size();i++){
+                out[i][0] = Long.toString(tUser.get(i).getId());
+                out[i][1] = tUser.get(i).getNama();
+                out[i][2] = tUser.get(i).getPass();
+                out[i][3] = tUser.get(i).getEmail();
+            }
+        return out;
+    }
 }

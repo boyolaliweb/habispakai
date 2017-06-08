@@ -62,14 +62,15 @@ public class Controller extends MouseAdapter implements ActionListener{
                         JOptionPane.showMessageDialog(null, "Username dan Password tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE); 
                     } else if (L.getIdLogin().equals("admin") && L.getPassLogin().equals("admin")){
                         currentView="1";
+                        ad.setListUser(model.getListOutUser());
                         view.getCardLayout().show(mainPanel, currentView);
                     }else if (model.cariUser(Integer.parseInt(L.getIdLogin()), L.getPassLogin())!=null){
                         currentView="1";
                         view.getCardLayout().show(mainPanel, currentView);
                     } else
                          JOptionPane.showMessageDialog(null, "User tidak ada atau username dan pass salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
-                }
-           }
+            } 
+        }
     }
     
     
