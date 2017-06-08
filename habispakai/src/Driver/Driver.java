@@ -7,6 +7,8 @@ package Driver;
 
 import Database.Database;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import model.User;
 
 
 
@@ -22,11 +24,10 @@ public class Driver {
      */
     public static void main(String[] args) throws SQLException {
         Database d = new Database();
-        int id = 25;
-        String even = "qwre";
-        String u = "1234565";
+        ArrayList<User> a = new ArrayList();
         
-        d.insertUser(id, even, even, even, u);
+        
+       
         
     }
     
