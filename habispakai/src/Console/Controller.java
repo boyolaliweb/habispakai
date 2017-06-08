@@ -5,6 +5,7 @@
  */
 package Console;
 
+import View.Admin;
 import View.InputUser;
 import View.Log;
 import View.Login;
@@ -28,21 +29,21 @@ public class Controller extends MouseAdapter implements ActionListener{
     private boolean posisi;
     
     private Login L;
-    private InputUser iu;
+    private Admin ad;
     
     public Controller(Aplikasi Model){
         this.model = Model;
         this.view = new panelContainer();
         
         L = new Login();
-        iu = new InputUser();
+        ad = new Admin();
         
         L.addListener(this);
         
         
         mainPanel = view.getMainPanel();
         mainPanel.add(L,"0");
-        mainPanel.add(iu,"1");
+        mainPanel.add(ad,"1");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
