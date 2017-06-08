@@ -22,11 +22,11 @@ public class Driver {
      */
     public static void main(String[] args) throws SQLException {
         Database d = new Database();
-        int id = 1234;
+        int id = 25;
         String even = "qwre";
-        int u = 1234565;
+        String u = "1234565";
         
-        
+        d.insertUser(id, even, even, even, u);
         
     }
     
