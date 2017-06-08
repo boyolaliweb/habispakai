@@ -88,8 +88,11 @@ public class Database {
     
     public void removeUser(long id,String user_id){
        String s = "Update User set del = 1,del_on = NOW(),modified_by = "+user_id+", modified_on = NOW() where id = '"+id+"';";
+       String x = "INSERT INTO `log` (`id`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"', 'Hapus User dengan id "+id+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
+            query(x);
         } catch (SQLException ex) {
             System.out.println(ex);
         } 
