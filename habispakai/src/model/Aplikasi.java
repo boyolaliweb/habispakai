@@ -22,6 +22,12 @@ public class Aplikasi {
         tUser = d.readUser();
     }
     
-    
+    public User cariUser(long id,String pass){
+        for(int i=0;i<tUser.size();i++){
+            if(tUser.get(i).getId()==id && tUser.get(i).getPass().equals(pass)){
+                return tUser.get(i);
+            }
+        }return null;
+    }
     
 }
