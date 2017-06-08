@@ -10,8 +10,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.User;
 
 /**
  *
@@ -96,5 +98,22 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println(ex);
         } 
+    }
+    
+    public ArrayList<User> readUser(){
+        ArrayList<User> dUser = new ArrayList();
+        String s = "select id, nama, pass, email from user";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                User u;
+                u = new User(rs.getLong("id"),rs.getString("nama"),rs.getString("pass"),rs.getString("email"));
+                dUser.add(u);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dUser;
     }
 }

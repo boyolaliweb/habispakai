@@ -5,8 +5,12 @@
  */
 package Driver;
 
+import Console.Controller;
 import Database.Database;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import model.Aplikasi;
+import model.User;
 
 
 
@@ -21,12 +25,11 @@ public class Driver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        Database d = new Database();
-        int id = 25;
-        String even = "qwre";
-        String u = "1234565";
+        Aplikasi ap = new Aplikasi();
+        new Controller(ap);
         
-        d.insertUser(id, even, even, even, u);
+        
+       
         
     }
     
