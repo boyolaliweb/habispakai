@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,15 +34,15 @@ public class Admin extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        Utambah = new javax.swing.JButton();
+        Uedit = new javax.swing.JButton();
+        Uhapus = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tUser = new javax.swing.JTable();
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
+        Ucari = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -63,13 +65,13 @@ public class Admin extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
+        LO = new javax.swing.JButton();
 
-        jButton6.setText("Tambah");
+        Utambah.setText("Tambah");
 
-        jButton7.setText("Edit");
+        Uedit.setText("Edit");
 
-        jButton8.setText("Hapus");
+        Uhapus.setText("Hapus");
 
         jLabel3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel3.setText("DAFTAR USER");
@@ -87,9 +89,9 @@ public class Admin extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tUser);
 
-        jLabel4.setText("Username");
+        jLabel4.setText("User ID");
 
-        jButton10.setText("Cari");
+        Ucari.setText("Cari");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -103,14 +105,14 @@ public class Admin extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Ucari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jButton8)
+                            .addComponent(Uhapus)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton7)
+                            .addComponent(Uedit)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton6)
+                            .addComponent(Utambah)
                             .addGap(11, 11, 11))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -124,15 +126,15 @@ public class Admin extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10)
+                    .addComponent(Ucari)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton7)
-                    .addComponent(jButton6))
+                    .addComponent(Uhapus)
+                    .addComponent(Uedit)
+                    .addComponent(Utambah))
                 .addGap(57, 57, 57))
         );
 
@@ -325,7 +327,7 @@ public class Admin extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Log", jPanel5);
 
-        jButton9.setText("LogOut");
+        LO.setText("LogOut");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -334,7 +336,7 @@ public class Admin extends javax.swing.JPanel {
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton9)
+                .addComponent(LO)
                 .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
@@ -342,25 +344,25 @@ public class Admin extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
+                .addComponent(LO)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LO;
+    private javax.swing.JButton Ucari;
+    private javax.swing.JButton Uedit;
+    private javax.swing.JButton Uhapus;
+    private javax.swing.JButton Utambah;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -387,6 +389,28 @@ public class Admin extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     //************************* User *********************//
+    
+    public Object getUtambah(){
+        return Utambah;
+    }
+    public Object getUhapus(){
+        return Uhapus;
+    }
+    public Object getUedit(){
+        return Uedit;
+    }
+    public Object getUcari(){
+        return Ucari;
+    }
+    public Object getTuser(){
+        return tUser;
+    }
+    public int getUser(){
+        return tUser.getSelectedRow();
+    }
+    public String getUser2(){
+        return tUser.getValueAt(0,0).toString();
+    }
     public void setListUser(String[][] list){
         String[] judul = {"ID","Nama","Pass","Email"};
         String[][] isi = new String[list.length][4];
@@ -400,6 +424,20 @@ public class Admin extends javax.swing.JPanel {
         tUser.setModel(tableModel);
         tUser.getColumnModel().getColumn(0).setPreferredWidth(20);
     }
-
-
+    
+    //---------------------------TOOL---------------------//
+    public Object Lopress(){
+        return LO;
+    }
+    public void addListener(ActionListener e){
+        Utambah.addActionListener(e);
+        Uedit.addActionListener(e);
+        Uhapus.addActionListener(e);
+        Ucari.addActionListener(e);
+        LO.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e){
+        tUser.addMouseListener(e);
+    }
 }

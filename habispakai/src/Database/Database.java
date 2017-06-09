@@ -89,7 +89,7 @@ public class Database {
     }
     
     public void removeUser(long id,String user_id){
-       String s = "Update User set del = 1,del_on = NOW(),modified_by = "+user_id+", modified_on = NOW() where id = '"+id+"';";
+       String s = "Update User set del = 1,del_on = NOW(),modified_by = '"+user_id+"', modified_on = NOW() where id = '"+id+"';";
        String x = "INSERT INTO `log` (`id`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"', 'Hapus User dengan id "+id+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
@@ -102,13 +102,15 @@ public class Database {
     
     public ArrayList<User> readUser(){
         ArrayList<User> dUser = new ArrayList();
-        String s = "select id, nama, pass, email from user";
+        String s = "select id, nama, pass, email, del from user";
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
                 User u;
-                u = new User(rs.getLong("id"),rs.getString("nama"),rs.getString("pass"),rs.getString("email"));
-                dUser.add(u);
+                if (rs.getInt("del")== 0){
+                    u = new User(rs.getLong("id"),rs.getString("nama"),rs.getString("pass"),rs.getString("email"), rs.getInt("del"));
+                    dUser.add(u);
+                }
                 
             }
         } catch (SQLException ex) {

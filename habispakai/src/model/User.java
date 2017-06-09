@@ -14,13 +14,24 @@ public class User {
     private String nama;
     private String pass;
     private String email;
+    private int del;
 
-    public User(long id, String nama, String pass, String email) {
+    public User(long id, String nama, String pass, String email, int del) {
         this.id = id;
         this.nama = nama;
         this.pass = pass;
         this.email = email;
+        this.del = del;
     }
+
+    public int getDel() {
+        return del;
+    }
+
+    public void setDel(int del) {
+        this.del = del;
+    }
+   
 
     public long getId() {
         return id;
