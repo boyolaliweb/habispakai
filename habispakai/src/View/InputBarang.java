@@ -75,7 +75,7 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel6.setText("ID Barang         :");
 
-        jLabel7.setText("Nama Barang    :");
+        jLabel7.setText("Merk/Type        :");
 
         jLabel8.setText("Jumlah              :");
 
@@ -87,7 +87,7 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel9.setText("Harga Satuan   :");
 
-        jLabel10.setText("ID Barang         :");
+        jLabel10.setText("Nama Barang    :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -152,9 +152,9 @@ public class InputBarang extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(jButton2)
-                .addGap(103, 103, 103))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
