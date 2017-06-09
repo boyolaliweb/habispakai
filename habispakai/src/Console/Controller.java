@@ -7,7 +7,6 @@ package Console;
 
 import View.Admin;
 import View.InputUser;
-import View.Log;
 import View.Login;
 import View.panelContainer;
 import java.awt.event.ActionEvent;
