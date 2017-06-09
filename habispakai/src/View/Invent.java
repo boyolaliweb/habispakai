@@ -32,12 +32,12 @@ public class Invent extends javax.swing.JPanel {
         jTable4 = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jNamaBarang = new javax.swing.JTextField();
-        SrcInv = new javax.swing.JButton();
-        DelInv = new javax.swing.JButton();
-        EditInv = new javax.swing.JButton();
-        AddInv = new javax.swing.JButton();
-        Print = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCari = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
 
         jLabel7.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel7.setText("DAFTAR INVENTARIS");
@@ -57,27 +57,32 @@ public class Invent extends javax.swing.JPanel {
 
         jLabel8.setText("Nama barang");
 
-        SrcInv.setText("Cari");
-        SrcInv.addActionListener(new java.awt.event.ActionListener() {
+        btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SrcInvActionPerformed(evt);
+                btnCariActionPerformed(evt);
             }
         });
 
-        DelInv.setText("Hapus");
-        DelInv.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setText("Hapus");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DelInvActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
-        EditInv.setText("Edit");
+        btnEdit.setText("Edit");
 
-        AddInv.setText("Tambah");
+        btnAdd.setText("Tambah");
 
-        Print.setText("Cetak");
+        btnPrint.setText("Cetak");
 
-        jButton1.setText("LogOut");
+        btnKeluar.setText("LogOut");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,18 +98,18 @@ public class Invent extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(SrcInv, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Print))
+                            .addComponent(btnPrint))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(DelInv)
+                                .addComponent(btnDelete)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EditInv)
+                                .addComponent(btnEdit)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AddInv))
+                                .addComponent(btnAdd))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))))
+                            .addComponent(btnKeluar))))
                 .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
@@ -116,37 +121,41 @@ public class Invent extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(SrcInv)
-                    .addComponent(Print))
+                    .addComponent(btnCari)
+                    .addComponent(btnPrint))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditInv)
-                    .addComponent(DelInv)
-                    .addComponent(AddInv))
+                    .addComponent(btnEdit)
+                    .addComponent(btnDelete)
+                    .addComponent(btnAdd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnKeluar)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DelInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelInvActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DelInvActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void SrcInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SrcInvActionPerformed
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SrcInvActionPerformed
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKeluarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddInv;
-    private javax.swing.JButton DelInv;
-    private javax.swing.JButton EditInv;
-    private javax.swing.JButton Print;
-    private javax.swing.JButton SrcInv;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCari;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jNamaBarang;
