@@ -50,6 +50,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         iu.addListener(this);
         ad.addListener(this);
         ad.addAdapter(this);
+        eu.addListener(this);
         
         
         mainPanel = view.getMainPanel();
@@ -93,7 +94,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     } else
                          JOptionPane.showMessageDialog(null, "User tidak ada atau username dan pass salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
             }
-        } if (currentView.equals("1")){
+        } else if (currentView.equals("1")){
             if(source.equals(ad.getUtambah())){
                 currentView="2";
                 view.getCardLayout().show(mainPanel, currentView);
@@ -113,10 +114,13 @@ public class Controller extends MouseAdapter implements ActionListener{
                    JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Ubah", "Peringatan", JOptionPane.ERROR_MESSAGE);
                }else{
                     currentView="3";
+                    eu.setPass(tmpUser.getPass());
+                    eu.setEmail(tmpUser.getEmail());
+                    eu.setNama(tmpUser.getNama());
                     view.getCardLayout().show(mainPanel, currentView);
                 }
             }
-        } if (currentView.equals("2")){
+        }else if (currentView.equals("2")){
             String s = "";
             if(source.equals(iu.getBuat())){
                 if (iu.getNama().equals("")||iu.getEmsil().equals("")){
@@ -129,6 +133,18 @@ public class Controller extends MouseAdapter implements ActionListener{
                 currentView="1";
                 ad.setListUser(model.getListOutUser());
                 view.getCardLayout().show(mainPanel, currentView);
+            }
+        } else if(currentView.equals("3")){
+            if (source.equals(eu.getBack())){
+                currentView = "1";
+                ad.setListUser(model.getListOutUser());
+                view.getCardLayout().show(mainPanel, currentView);
+            } else if (source.equals(eu.getSubmit())){
+                tmpUser.setNama(eu.getEnama());
+                tmpUser.setEmail(eu.getEemail());
+                tmpUser.setPass(eu.getEpass());
+                model.editUser(tmpUser, "admin");
+                JOptionPane.showMessageDialog(null, "Data User Berhasil di Sunting");
             }
         }
     }
