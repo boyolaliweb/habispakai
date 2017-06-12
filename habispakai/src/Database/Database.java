@@ -182,7 +182,6 @@ public class Database {
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
-                z[n] = rs.getLong("id_user");
                 if (rs.getLong("id_user")==id){
                     out[n][0] = Long.toString(rs.getLong("id"));
                     out[n][1] = rs.getString("even");
