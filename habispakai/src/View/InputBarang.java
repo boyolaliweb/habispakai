@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Jefri
@@ -35,23 +37,23 @@ public class InputBarang extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        Type = new javax.swing.JTextField();
+        IType = new javax.swing.JTextField();
         Tambah = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        IDbrg = new javax.swing.JTextField();
-        Merk = new javax.swing.JTextField();
-        Satuan = new javax.swing.JTextField();
+        IIDbrg = new javax.swing.JTextField();
+        IMerk = new javax.swing.JTextField();
+        ISatuan = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        Namabrg = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        INamabrg = new javax.swing.JTextField();
+        Back = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        Masa = new javax.swing.JTextField();
+        IMasa = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        Keterangan = new javax.swing.JTextField();
+        IKeterangan = new javax.swing.JTextField();
 
         jButton1.setText("Buat");
 
@@ -84,9 +86,15 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel8.setText("Type/Seri          :");
 
-        Merk.addActionListener(new java.awt.event.ActionListener() {
+        IIDbrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MerkActionPerformed(evt);
+                IIDbrgActionPerformed(evt);
+            }
+        });
+
+        IMerk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IMerkActionPerformed(evt);
             }
         });
 
@@ -94,7 +102,7 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel10.setText("Nama Barang    :");
 
-        jButton3.setText("Kembali");
+        Back.setText("Kembali");
 
         jLabel12.setText("Masa Pakai        :");
 
@@ -125,29 +133,26 @@ public class InputBarang extends javax.swing.JPanel {
                                             .addComponent(jLabel9))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Merk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
-                                    .addComponent(Satuan, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Namabrg)
-                                    .addComponent(Type)))
+                                    .addComponent(IMerk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                                    .addComponent(ISatuan, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(INamabrg)
+                                    .addComponent(IType)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(11, 11, 11)
-                                .addComponent(IDbrg))
+                                .addComponent(IIDbrg))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton3)
-                                        .addGap(277, 277, 277))
-                                    .addComponent(Tambah)))
+                                .addComponent(Back)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Tambah))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Masa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Keterangan, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(IMasa, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(IKeterangan, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(119, 119, 119))))
         );
         layout.setVerticalGroup(
@@ -158,36 +163,36 @@ public class InputBarang extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(IDbrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IIDbrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Namabrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INamabrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Merk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IMerk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ISatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(Masa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IMasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(Keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                    .addComponent(IKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tambah)
-                    .addComponent(jButton3))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(Back))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -195,26 +200,30 @@ public class InputBarang extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void MerkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MerkActionPerformed
+    private void IMerkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMerkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MerkActionPerformed
+    }//GEN-LAST:event_IMerkActionPerformed
 
     private void TambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TambahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TambahActionPerformed
 
+    private void IIDbrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IIDbrgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IIDbrgActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField IDbrg;
-    private javax.swing.JTextField Keterangan;
-    private javax.swing.JTextField Masa;
-    private javax.swing.JTextField Merk;
-    private javax.swing.JTextField Namabrg;
-    private javax.swing.JTextField Satuan;
+    private javax.swing.JButton Back;
+    private javax.swing.JTextField IIDbrg;
+    private javax.swing.JTextField IKeterangan;
+    private javax.swing.JTextField IMasa;
+    private javax.swing.JTextField IMerk;
+    private javax.swing.JTextField INamabrg;
+    private javax.swing.JTextField ISatuan;
+    private javax.swing.JTextField IType;
     private javax.swing.JButton Tambah;
-    private javax.swing.JTextField Type;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -231,4 +240,46 @@ public class InputBarang extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    public String getIIDbrg(){
+        return IIDbrg.getText();
+    }
+    public String getINamabrg(){
+        return INamabrg.getText();
+    }
+    public String getIMerk(){
+        return IMerk.getText();
+    }
+    public String getIType(){
+        return IType.getText();
+    }
+    public String getISatuan(){
+        return ISatuan.getText();
+    }
+    public String getIMasa(){
+        return IMasa.getText();
+    }
+    public String getIKeterangan(){
+        return IKeterangan.getText();
+    }
+    public Object getBuat(){
+        return Tambah;
+    }
+    public Object getBack(){
+        return Back;
+    }
+    public void refresh(){
+        IIDbrg.setText("");
+        INamabrg.setText("");
+        IMerk.setText("");
+        IType.setText("");
+        ISatuan.setText("");
+        IMasa.setText("");
+        IKeterangan.setText("");
+    }
+    public void addListener(ActionListener e){
+        Tambah.addActionListener(e);
+        Back.addActionListener(e);    
+    
+}
 }
