@@ -10,6 +10,7 @@ import View.EditUser;
 import View.InputBarang;
 import View.InputUser;
 import View.Login;
+import View.MenuUser;
 import View.panelContainer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Aplikasi;
 import model.User;
+
 
 /**
  *
@@ -40,6 +42,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private Admin ad;
     private InputUser iu;
     private EditUser eu;
+    private MenuUser mu;
     
     public Controller(Aplikasi Model){
         this.model = Model;
@@ -49,6 +52,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         ad = new Admin();
         iu = new InputUser();
         eu = new EditUser();
+        mu = new MenuUser();
         
         L.addListener(this);
         iu.addListener(this);
@@ -62,6 +66,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(ad,"1");
         mainPanel.add(iu,"2");
         mainPanel.add(eu,"3");
+        mainPanel.add(mu,"4");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -93,7 +98,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                         ad.setListUser(model.getListOutUser());
                         view.getCardLayout().show(mainPanel, currentView);
                     }else if (model.cariUser(Integer.parseInt(L.getIdLogin()), L.getPassLogin())!=null){
-                        currentView="1";
+                        currentView="4";
                         view.getCardLayout().show(mainPanel, currentView);
                     } else
                          JOptionPane.showMessageDialog(null, "User tidak ada atau username dan pass salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
