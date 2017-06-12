@@ -6,6 +6,7 @@
 package Console;
 
 import View.Admin;
+import View.EditUser;
 import View.InputBarang;
 import View.InputUser;
 import View.Login;
@@ -34,6 +35,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private Login L;
     private Admin ad;
     private InputUser iu;
+    private EditUser eu;
     
     public Controller(Aplikasi Model){
         this.model = Model;
@@ -42,6 +44,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         L = new Login();
         ad = new Admin();
         iu = new InputUser();
+        eu = new EditUser();
         
         L.addListener(this);
         iu.addListener(this);
@@ -53,6 +56,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(L,"0");
         mainPanel.add(ad,"1");
         mainPanel.add(iu,"2");
+        mainPanel.add(eu,"3");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -104,6 +108,13 @@ public class Controller extends MouseAdapter implements ActionListener{
                    JOptionPane.showMessageDialog(null, "Data Dengan Nama "+tmpUser.getNama()+" Berhasil di Hapus");
                    model.removeUser(tmpUser);
                    ad.setListUser(model.getListOutUser());
+            }else if (source.equals(ad.getUedit())){
+                if(tmpUser==null){
+                   JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Ubah", "Peringatan", JOptionPane.ERROR_MESSAGE);
+               }else{
+                    currentView="3";
+                    view.getCardLayout().show(mainPanel, currentView);
+                }
             }
         } if (currentView.equals("2")){
             String s = "";
