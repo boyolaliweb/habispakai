@@ -47,7 +47,7 @@ public class InputBarang extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         Namabrg = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         Masa = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -94,7 +94,7 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel10.setText("Nama Barang    :");
 
-        jButton3.setText("Kembali");
+        Back.setText("Kembali");
 
         jLabel12.setText("Masa Pakai        :");
 
@@ -137,7 +137,7 @@ public class InputBarang extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton3)
+                                        .addComponent(Back)
                                         .addGap(277, 277, 277))
                                     .addComponent(Tambah)))
                             .addGroup(layout.createSequentialGroup()
@@ -186,7 +186,7 @@ public class InputBarang extends javax.swing.JPanel {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tambah)
-                    .addComponent(jButton3))
+                    .addComponent(Back))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -205,6 +205,7 @@ public class InputBarang extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JTextField IDbrg;
     private javax.swing.JTextField Keterangan;
     private javax.swing.JTextField Masa;
@@ -214,7 +215,6 @@ public class InputBarang extends javax.swing.JPanel {
     private javax.swing.JButton Tambah;
     private javax.swing.JTextField Type;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
