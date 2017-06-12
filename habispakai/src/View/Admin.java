@@ -5,8 +5,11 @@
  */
 package View;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.sql.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -40,7 +43,7 @@ public class Admin extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tUser = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
+        cari = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Ucari = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -57,14 +60,14 @@ public class Admin extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        lId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        date = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        lCari = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tLog = new javax.swing.JTable();
         LO = new javax.swing.JButton();
 
         Utambah.setText("Tambah");
@@ -103,7 +106,7 @@ public class Admin extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Ucari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +128,7 @@ public class Admin extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Ucari)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -262,11 +265,11 @@ public class Admin extends javax.swing.JPanel {
 
         jLabel6.setText("Tanggal :");
 
-        jButton13.setText("Cari");
+        lCari.setText("Cari");
 
         jLabel7.setText("Log Aktifitas");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tLog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -277,7 +280,7 @@ public class Admin extends javax.swing.JPanel {
                 "id", "Event", "User ID", "Time", "Del"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tLog);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -295,13 +298,13 @@ public class Admin extends javax.swing.JPanel {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13)
+                        .addComponent(lCari)
                         .addGap(142, 142, 142)
                         .addComponent(jButton12)))
                 .addGap(7, 7, 7))
@@ -315,11 +318,11 @@ public class Admin extends javax.swing.JPanel {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton13)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lCari)
+                        .addComponent(lId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
                         .addComponent(jButton12))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
@@ -356,14 +359,14 @@ public class Admin extends javax.swing.JPanel {
     private javax.swing.JButton Uedit;
     private javax.swing.JButton Uhapus;
     private javax.swing.JButton Utambah;
+    private javax.swing.JTextField cari;
+    private com.toedter.calendar.JDateChooser date;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -381,10 +384,10 @@ public class Admin extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton lCari;
+    private javax.swing.JTextField lId;
+    private javax.swing.JTable tLog;
     private javax.swing.JTable tUser;
     // End of variables declaration//GEN-END:variables
 
@@ -411,6 +414,9 @@ public class Admin extends javax.swing.JPanel {
     public String getUser2(){
         return tUser.getValueAt(0,0).toString();
     }
+    public String getCari(){
+        return cari.getText();
+    }
     public void setListUser(String[][] list){
         String[] judul = {"ID","Nama","Pass","Email"};
         String[][] isi = new String[list.length][4];
@@ -425,6 +431,33 @@ public class Admin extends javax.swing.JPanel {
         tUser.getColumnModel().getColumn(0).setPreferredWidth(20);
     }
     
+    //--------------------------Log-----------------------//
+    public void setListLog(String[][] list){
+        String[] judul = {"ID","Event","User_id","Time"};
+        String[][] isi = new String[list.length][4];
+        for (int i = 0; i < list.length; i++){
+            isi[i][0] = list[i][0];
+            isi[i][1] = list[i][1];
+            isi[i][2] = list[i][2];
+            isi[i][3] = list[i][3];
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
+        tLog.setModel(tableModel);
+        tLog.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    public java.util.Date getTanggal(){
+        return date.getDate();
+    }
+    public Object getlcari(){
+        return lCari;
+    }
+    public String getlId(){
+        return lId.getText();
+    }
+    
+    public Object tLog(){
+        return tLog;
+    }
     //---------------------------TOOL---------------------//
     public Object Lopress(){
         return LO;
@@ -435,6 +468,7 @@ public class Admin extends javax.swing.JPanel {
         Uhapus.addActionListener(e);
         Ucari.addActionListener(e);
         LO.addActionListener(e);
+        lCari.addActionListener(e);
     }
     
     public void addAdapter(MouseAdapter e){

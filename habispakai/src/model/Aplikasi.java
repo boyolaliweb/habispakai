@@ -6,6 +6,7 @@
 package model;
 
 import Database.Database;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -71,8 +72,25 @@ public class Aplikasi {
         }
         return out;
     }
+    public String[][] getListOutUser2(User u){
+        String out[][] = new String[1][4];
+        out[0][0] = Long.toString(u.getId());
+        out[0][1] = u.getNama();
+        out[0][2] = u.getPass();
+        out[0][3] = u.getEmail();
+        return out;
+    }
     
     public void editUser(User u, String user_id){
         d.editUser(u, user_id);
+    }
+    public String[][] getListLog(java.util.Date tgl,long id){
+        if (tgl!=null){
+            return d.readLog(tgl);
+        }
+        else if (d.cekidLog(id) && id!=0){
+            return d.readLog2(id);
+        }
+        return null;
     }
 }
