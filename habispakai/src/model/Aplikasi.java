@@ -71,4 +71,8 @@ public class Aplikasi {
         }
         return out;
     }
+    
+    public void editUser(User u, String user_id){
+        d.editUser(u, user_id);
+    }
 }

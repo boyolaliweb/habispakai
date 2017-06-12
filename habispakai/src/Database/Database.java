@@ -118,4 +118,18 @@ public class Database {
         }
         return dUser;
     }
+    
+    public void editUser(User u,String user_id){
+        String s = "Update User set nama = '"+u.getNama()+"', pass = '"+u.getPass()+"', email = '"+
+                u.getEmail()+"', modified_by = '"+user_id+"', modified_on = NOW() where id = "+u.getId()+";";
+        String x = "INSERT INTO `log` (`id`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"', 'Edit User dengan id "+u.getId()+"' nama  "+
+                u.getNama()+" pass "+u.getPass()+" email "+u.getEmail()+", '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        try {
+            query(s);
+            query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } 
+    }
 }
