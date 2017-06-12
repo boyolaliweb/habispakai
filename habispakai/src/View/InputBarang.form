@@ -91,14 +91,9 @@
                               <Component id="IDbrg" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="Back" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="Tambah" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="Back" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Tambah" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -158,12 +153,12 @@
                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Keterangan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Tambah" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Back" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -200,6 +195,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="IDbrg">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IDbrgActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Merk">
       <Events>

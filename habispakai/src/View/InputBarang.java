@@ -84,6 +84,12 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel8.setText("Type/Seri          :");
 
+        IDbrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDbrgActionPerformed(evt);
+            }
+        });
+
         Merk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MerkActionPerformed(evt);
@@ -134,12 +140,9 @@ public class InputBarang extends javax.swing.JPanel {
                                 .addGap(11, 11, 11)
                                 .addComponent(IDbrg))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Back)
-                                        .addGap(277, 277, 277))
-                                    .addComponent(Tambah)))
+                                .addComponent(Back)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Tambah))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
@@ -183,11 +186,11 @@ public class InputBarang extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(Keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tambah)
                     .addComponent(Back))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -202,6 +205,10 @@ public class InputBarang extends javax.swing.JPanel {
     private void TambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TambahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TambahActionPerformed
+
+    private void IDbrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDbrgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDbrgActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
