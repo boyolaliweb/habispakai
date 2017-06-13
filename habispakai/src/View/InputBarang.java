@@ -98,6 +98,8 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel12.setText("Masa Pakai        :");
 
+        IHarga.setText("Rp. ");
+
         jLabel13.setText("Keterangan      :");
 
         jLabel6.setText("Harga                :");
