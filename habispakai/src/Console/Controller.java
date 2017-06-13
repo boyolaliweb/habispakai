@@ -43,6 +43,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private InputUser iu;
     private EditUser eu;
     private MenuUser mu;
+    private InputBarang ib;
     
     public Controller(Aplikasi Model){
         this.model = Model;
@@ -53,12 +54,16 @@ public class Controller extends MouseAdapter implements ActionListener{
         iu = new InputUser();
         eu = new EditUser();
         mu = new MenuUser();
+        ib = new InputBarang();
         
         L.addListener(this);
         iu.addListener(this);
         ad.addListener(this);
         ad.addAdapter(this);
         eu.addListener(this);
+        ib.addListener(this);
+        mu.addListener(this);
+        
         
         
         mainPanel = view.getMainPanel();
@@ -67,6 +72,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(iu,"2");
         mainPanel.add(eu,"3");
         mainPanel.add(mu,"4");
+        mainPanel.add(ib,"5");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -99,6 +105,8 @@ public class Controller extends MouseAdapter implements ActionListener{
                         view.getCardLayout().show(mainPanel, currentView);
                     }else if (model.cariUser(Integer.parseInt(L.getIdLogin()), L.getPassLogin())!=null){
                         currentView="4";
+                        mu.setListBarang(model.getListOutBarang());
+                        tmpUser=model.cariUser(Integer.parseInt(L.getIdLogin()), L.getPassLogin());
                         view.getCardLayout().show(mainPanel, currentView);
                     } else
                          JOptionPane.showMessageDialog(null, "User tidak ada atau username dan pass salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
@@ -178,6 +186,29 @@ public class Controller extends MouseAdapter implements ActionListener{
                 model.editUser(tmpUser, "admin");
                 eu.refresh();
                 JOptionPane.showMessageDialog(null, "Data User Berhasil di Sunting");
+            }
+        } else if(currentView.equals("4")){
+            if(source.equals(mu.getTambah())){
+                currentView = "5";
+                ib.refresh();
+                view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(mu.getLopress())){
+                currentView="0";
+                L.refresh();
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        } else if(currentView.equals("5")){
+            String s = null;
+            if(source.equals(ib.getBack())){
+                currentView="4";
+                view.getCardLayout().show(mainPanel, currentView);
+            } else if(source.equals(ib.getBuat())){
+                if (ib.getINamabrg().equals("")||ib.getIKeterangan().equals("")||ib.getIMasa().equals("")||ib.getIMerk().equals("")||ib.getISatuan().equals("")||ib.getIType().equals("")){
+                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh ada yang kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else
+                   s = model.insertBarang(ib.getINamabrg(), ib.getIMerk(), ib.getIType(), ib.getISatuan(), Integer.parseInt(ib.getIMasa()), ib.getIKeterangan(), Long.toString(tmpUser.getId()),ib.getHarga());
+                   ib.refresh();
+                   JOptionPane.showMessageDialog(null, "Barang Berhasil ditambahkan \n"+s);
             }
         }
     }

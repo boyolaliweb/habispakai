@@ -40,10 +40,8 @@ public class InputBarang extends javax.swing.JPanel {
         IType = new javax.swing.JTextField();
         Tambah = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        IIDbrg = new javax.swing.JTextField();
         IMerk = new javax.swing.JTextField();
         ISatuan = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -51,9 +49,11 @@ public class InputBarang extends javax.swing.JPanel {
         INamabrg = new javax.swing.JTextField();
         Back = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        IMasa = new javax.swing.JTextField();
+        IHarga = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         IKeterangan = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        IMasa = new javax.swing.JTextField();
 
         jButton1.setText("Buat");
 
@@ -80,17 +80,9 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel5.setText("Tambah Barang");
 
-        jLabel6.setText("ID Barang         :");
-
         jLabel7.setText("Merk                  :");
 
         jLabel8.setText("Type/Seri          :");
-
-        IIDbrg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IIDbrgActionPerformed(evt);
-            }
-        });
 
         IMerk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,18 +100,25 @@ public class InputBarang extends javax.swing.JPanel {
 
         jLabel13.setText("Keterangan      :");
 
+        jLabel6.setText("Harga                :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(128, 128, 128)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(IHarga))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -133,14 +132,10 @@ public class InputBarang extends javax.swing.JPanel {
                                             .addComponent(jLabel9))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(IMerk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                                    .addComponent(IMerk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                                     .addComponent(ISatuan, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(INamabrg)
                                     .addComponent(IType)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(11, 11, 11)
-                                .addComponent(IIDbrg))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Back)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,11 +143,14 @@ public class InputBarang extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
-                                    .addComponent(jLabel13))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(IMasa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(IKeterangan, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(IMasa))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(IKeterangan)))))
                         .addGap(119, 119, 119))))
         );
         layout.setVerticalGroup(
@@ -160,11 +158,7 @@ public class InputBarang extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(IIDbrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(INamabrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -180,19 +174,23 @@ public class InputBarang extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ISatuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
                     .addComponent(IMasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(IHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(IKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tambah)
                     .addComponent(Back))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -208,14 +206,10 @@ public class InputBarang extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_TambahActionPerformed
 
-    private void IIDbrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IIDbrgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IIDbrgActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
-    private javax.swing.JTextField IIDbrg;
+    private javax.swing.JTextField IHarga;
     private javax.swing.JTextField IKeterangan;
     private javax.swing.JTextField IMasa;
     private javax.swing.JTextField IMerk;
@@ -241,9 +235,7 @@ public class InputBarang extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
-    public String getIIDbrg(){
-        return IIDbrg.getText();
-    }
+    
     public String getINamabrg(){
         return INamabrg.getText();
     }
@@ -268,14 +260,18 @@ public class InputBarang extends javax.swing.JPanel {
     public Object getBack(){
         return Back;
     }
+    public String getHarga(){
+        return IHarga.getText();
+    }
     public void refresh(){
-        IIDbrg.setText("");
+        
         INamabrg.setText("");
         IMerk.setText("");
         IType.setText("");
         ISatuan.setText("");
         IMasa.setText("");
         IKeterangan.setText("");
+        IHarga.setText("");
     }
     public void addListener(ActionListener e){
         Tambah.addActionListener(e);

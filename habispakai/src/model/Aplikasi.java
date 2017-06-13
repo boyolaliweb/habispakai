@@ -7,6 +7,7 @@ package model;
 
 import Database.Database;
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,14 +17,17 @@ import java.util.Random;
  */
 public class Aplikasi {
     ArrayList<User> tUser;
+    ArrayList<Barang> tBarang;
     Database d;
 
     public Aplikasi() {
         tUser = new ArrayList();
+        tBarang = new ArrayList();
         d = new Database();
         tUser = d.readUser();
+        tBarang = d.readBarang();
     }
-    
+    //-------------------------ADMIN-----------------------///
     public User cariUser(long id,String pass){
         for(int i=0;i<tUser.size();i++){
             if(tUser.get(i).getId()==id && tUser.get(i).getPass().equals(pass)){
@@ -92,5 +96,38 @@ public class Aplikasi {
             return d.readLog2(id);
         }
         return null;
+    }
+    
+    //-----------------------------User----------------------------//
+    
+    public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id,String Harga){
+        int n = 0;
+        for(int i = 0;i<tBarang.size();i++){
+            if (tBarang.get(i).getId()>n){
+                n=tBarang.get(i).getId();
+            }
+        }
+        if (n>1000){
+            n++;
+        }else
+            n = 1001;
+        Barang b = new Barang(n, nama, merk, type, satuan, masapakai, Ket, 0,0,Harga);
+        d.insertBarang(n, nama, merk, type, satuan, masapakai, Ket, user_id,Harga);
+        this.tBarang.add(b);
+        
+        return "ID : "+n+"\nNama : "+nama;
+    }
+    public String[][] getListOutBarang(){
+        String out[][] = new String[tBarang.size()][5];
+        for (int i = 0;i < tBarang.size();i++){
+            if (tBarang.get(i).getDel()==0){
+                out[i][0] = Integer.toString(tBarang.get(i).getId());
+                out[i][1] = tBarang.get(i).getNama();
+                out[i][2] = tBarang.get(i).getType();
+                out[i][3] = Integer.toString(tBarang.get(i).getStok());
+                out[i][4] = tBarang.get(i).getHarga();
+            }
+        }
+        return out;
     }
 }
