@@ -105,6 +105,19 @@ public class Database {
         } 
     }
     
+    public void insertBarang(int id, String nama, String warna, String type, String satuan,int masapakai,String ket,String user_id){
+        String s = "INSERT INTO `barang` (`id`, `nama`, `warna`, `type/seri`, `satuan`, `masa_pakai`, `ket`, `del`, `del_on`, `mod_by`, `mod_on`) VALUES ('"+
+                id+"', '"+nama+"', '"+warna+"', '"+type+"', '"+satuan+"', '"+masapakai+"', '"+ket+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+        String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"','"+id+"', 'insert Barang dengan id "+id+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        try {
+            query(s);
+            query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } 
+    }
+    
     public ArrayList<User> readUser(){
         ArrayList<User> dUser = new ArrayList();
         String s = "select id, nama, pass, email, del from user";
