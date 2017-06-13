@@ -63,9 +63,7 @@ public class MenuUser extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        User = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         IDtrans = new javax.swing.JTextField();
         Wkt = new javax.swing.JTextField();
@@ -274,8 +272,6 @@ public class MenuUser extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Tambah Data Barang", jPanel3);
 
-        Harga.setText("jTextField5");
-
         jLabel1.setText("ID Transaksi         :");
 
         Save.setText("Simpan");
@@ -291,21 +287,9 @@ public class MenuUser extends javax.swing.JPanel {
 
         jLabel3.setText("ID Barang            :");
 
-        jLabel7.setText("User ID               :");
-
         jLabel4.setText("Qty                      :");
 
-        User.setText("jTextField6");
-
         jLabel5.setText("Harga                  :");
-
-        IDtrans.setText("jTextField1");
-
-        Wkt.setText("jTextField2");
-
-        IDbrg.setText("jTextField3");
-
-        Qty.setText("jTextField4");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -340,11 +324,7 @@ public class MenuUser extends javax.swing.JPanel {
                                 .addComponent(Harga))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGap(133, 133, 133)
-                                .addComponent(Save))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Save)))))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -370,15 +350,11 @@ public class MenuUser extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(Harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save)
                     .addComponent(Back))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Tambah Transaksi", jPanel4);
@@ -487,7 +463,6 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JTextField SrcNama;
     private javax.swing.JButton Tambah;
     private javax.swing.JTextField Type;
-    private javax.swing.JTextField User;
     private javax.swing.JTextField Wkt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -503,7 +478,6 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
