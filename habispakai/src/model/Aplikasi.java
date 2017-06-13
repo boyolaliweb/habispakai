@@ -130,4 +130,34 @@ public class Aplikasi {
         }
         return out;
     }
+    public String[][] getListOutBarang2(Barang u){
+        String out[][] = new String[1][5];
+        out[0][0] = Integer.toString(u.getId());
+        out[0][1] = u.getNama();
+        out[0][2] = u.getType();
+        out[0][3] = Integer.toString(u.getStok());
+        out[0][4] = u.getHarga();
+        return out;
+    }
+    public Barang cariBarang(long id){
+        for(int i=0;i<tBarang.size();i++){
+            if(tBarang.get(i).getId()==id ){
+                return tBarang.get(i);
+            }
+        }return null;
+    }
+    public Barang cariBarang2(int i){
+        return tBarang.get(i);
+    }
+    public Barang cariBarang3(String nama){
+        for(int i=0;i<tBarang.size();i++){
+            if(tBarang.get(i).getNama().equals(nama)){
+                return tBarang.get(i);
+            }
+        }return null;
+    }
+    public void removeBarang(Barang b,String user_id){
+        d.removeUser(b.getId(), user_id);
+        tBarang.remove(b);
+    }
 }

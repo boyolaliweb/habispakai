@@ -6,6 +6,7 @@
 package View;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -42,6 +43,7 @@ public class MenuUser extends javax.swing.JPanel {
         Src = new javax.swing.JButton();
         Print = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        detail = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         Harga = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
@@ -85,6 +87,8 @@ public class MenuUser extends javax.swing.JPanel {
         jLabel15.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel15.setText("DAFTAR BARANG");
 
+        detail.setText("Detail");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -97,6 +101,8 @@ public class MenuUser extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(detail)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Del)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Edit)
@@ -130,7 +136,8 @@ public class MenuUser extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Add)
                     .addComponent(Edit)
-                    .addComponent(Del))
+                    .addComponent(Del)
+                    .addComponent(detail))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -270,6 +277,7 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JButton Save;
     private javax.swing.JButton Src;
     private javax.swing.JTextField SrcNama;
+    private javax.swing.JButton detail;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -289,6 +297,18 @@ public class MenuUser extends javax.swing.JPanel {
    public Object getTBarang(){
        return tBarang;
    }
+   public int getBarang(){
+        return tBarang.getSelectedRow();
+    }
+    public String getBarang2(){
+        return tBarang.getValueAt(0,0).toString();
+    }
+    public String getSrcNama(){
+        return SrcNama.getText();
+    }
+    public Object getSrc(){
+        return Src;
+    }
    public void setListBarang(String[][] list){
         String[] judul = {"Id","Nama","Type/Seri","Stok","Harga"};
         String[][] isi = new String[list.length][5];
@@ -306,9 +326,28 @@ public class MenuUser extends javax.swing.JPanel {
    public Object getLopress(){
        return LogOut;
    }
+   public Object getDetail(){
+       return detail;
+   }
+   public Object getHapus(){
+       return Del;
+   }
+   public Object getEdit(){
+       return Edit;
+   }
    
    public void addListener(ActionListener e){
        LogOut.addActionListener(e);
        Add.addActionListener(e);
+       detail.addActionListener(e);
+       Del.addActionListener(e);
+       Edit.addActionListener(e);
+       Src.addActionListener(e);
+   }
+   public void addAdapter(MouseAdapter e){
+        tBarang.addMouseListener(e);
+    }
+   public void refresh(){
+       SrcNama.setText("");
    }
 }
