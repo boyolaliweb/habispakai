@@ -81,7 +81,6 @@ public class Database {
     }
     
     public void insertUser(long id,String nama,String pass,String email,String user_id){
-        String z = "jajaja";
         String s = "INSERT INTO `user` (`id`, `nama`, `pass`, `email`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +id+"', '"+nama+"', '"+pass+"', '"+email+"','0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         String x = "INSERT INTO `log` (`id`,`id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
