@@ -55,8 +55,11 @@ public class MenuUser extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        PassL = new javax.swing.JTextField();
         PassB = new javax.swing.JPasswordField();
+        pUbah = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        PassL = new javax.swing.JPasswordField();
+        cPass = new javax.swing.JPasswordField();
         LogOut = new javax.swing.JButton();
 
         Add.setText("Tambah");
@@ -203,25 +206,35 @@ public class MenuUser extends javax.swing.JPanel {
 
         jLabel17.setText("Password Baru           :");
 
+        pUbah.setText("Ubah");
+
+        jLabel1.setText("Confrim Password      :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pUbah)
+                .addGap(70, 70, 70))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
-                    .addComponent(jLabel17))
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel1))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PassB, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(PassL))
+                    .addComponent(PassL)
+                    .addComponent(cPass))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addGap(106, 106, 106)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel16)
                     .addComponent(PassL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -229,7 +242,13 @@ public class MenuUser extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(PassB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(pUbah)
+                .addGap(40, 40, 40))
         );
 
         Barang.addTab("Ubah Password", jPanel1);
@@ -271,13 +290,15 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JTextField IDbrg;
     private javax.swing.JButton LogOut;
     private javax.swing.JPasswordField PassB;
-    private javax.swing.JTextField PassL;
+    private javax.swing.JPasswordField PassL;
     private javax.swing.JButton Print;
     private javax.swing.JTextField Qty;
     private javax.swing.JButton Save;
     private javax.swing.JButton Src;
     private javax.swing.JTextField SrcNama;
+    private javax.swing.JPasswordField cPass;
     private javax.swing.JButton detail;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -289,6 +310,7 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton pUbah;
     private javax.swing.JTable tBarang;
     // End of variables declaration//GEN-END:variables
    public Object getTambah(){
@@ -335,7 +357,18 @@ public class MenuUser extends javax.swing.JPanel {
    public Object getEdit(){
        return Edit;
    }
-   
+   public String getPassL(){
+       return PassL.getText();
+   }
+   public String getPassN(){
+       return PassB.getText();
+   }
+   public String getCpass(){
+       return cPass.getText();
+   }
+   public Object getPubah(){
+       return pUbah;
+   }
    public void addListener(ActionListener e){
        LogOut.addActionListener(e);
        Add.addActionListener(e);
@@ -343,6 +376,7 @@ public class MenuUser extends javax.swing.JPanel {
        Del.addActionListener(e);
        Edit.addActionListener(e);
        Src.addActionListener(e);
+       pUbah.addActionListener(e);
    }
    public void addAdapter(MouseAdapter e){
         tBarang.addMouseListener(e);

@@ -306,6 +306,18 @@ public class Controller extends MouseAdapter implements ActionListener{
                     eb.setEmasa(Integer.toString(tmpBarang.getMasapakai()));
                     eb.setEtype(tmpBarang.getType());
                     view.getCardLayout().show(mainPanel, currentView);
+            }else if (source.equals(mu.getPubah())){
+                if (mu.getPassL().equals("")||mu.getPassN().equals("")||mu.getCpass().equals("")){
+                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if (!tmpUser2.getPass().equals(mu.getPassL())){
+                    JOptionPane.showMessageDialog(null, "Password Lama Salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if (!mu.getPassN().equals(mu.getCpass())){
+                    JOptionPane.showMessageDialog(null, "Confrim Password Salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else {
+                    model.editPass(tmpUser2.getPass(), mu.getPassN(),tmpUser2.getId());
+                    tmpUser2.setPass(mu.getPassN());
+                    JOptionPane.showMessageDialog(null, "Password Berhasil di Ubah");
+                }
             }
         } else if(currentView.equals("5")){
             String v = null;

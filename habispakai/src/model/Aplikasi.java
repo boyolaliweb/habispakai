@@ -169,4 +169,7 @@ public class Aplikasi {
         }
         d.editBarang(b, user_id);
     }
+    public void editPass(String PassL,String PassN, Long id){
+        d.ubahPass(PassL, PassN, id);
+    }
 }
