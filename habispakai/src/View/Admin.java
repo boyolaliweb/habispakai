@@ -48,16 +48,17 @@ public class Admin extends javax.swing.JPanel {
         Ucari = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        bTambah = new javax.swing.JButton();
+        bEdit = new javax.swing.JButton();
+        bHapus = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        tBarang = new javax.swing.JTable();
+        bCariNama = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bCari = new javax.swing.JButton();
+        Bdetail = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         lId = new javax.swing.JTextField();
@@ -160,18 +161,18 @@ public class Admin extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("User", jPanel3);
 
-        jButton2.setText("Tambah");
+        bTambah.setText("Tambah");
 
-        jButton3.setText("Edit");
+        bEdit.setText("Edit");
 
-        jButton4.setText("Hapus");
+        bHapus.setText("Hapus");
 
         jButton5.setText("Cetak");
 
         jLabel1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel1.setText("DAFTAR INVENTARIS");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -182,11 +183,13 @@ public class Admin extends javax.swing.JPanel {
                 "ID Barang", "Nama Barang", "Merk/Type", "Jumlah", "Harga Satuan", "Nilai Total"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tBarang);
 
         jLabel2.setText("Nama barang");
 
-        jButton1.setText("Cari");
+        bCari.setText("Cari");
+
+        Bdetail.setText("Detail");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -200,11 +203,13 @@ public class Admin extends javax.swing.JPanel {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(40, 40, 40))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jButton4)
+                            .addComponent(Bdetail)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton3)
+                            .addComponent(bHapus)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2)
+                            .addComponent(bEdit)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(bTambah)
                             .addGap(35, 35, 35))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,9 +217,9 @@ public class Admin extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bCariNama, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton5)
                         .addGap(38, 38, 38))))
@@ -226,17 +231,18 @@ public class Admin extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(bCariNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCari)
                     .addComponent(jLabel2)
                     .addComponent(jButton5))
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(bTambah)
+                    .addComponent(bEdit)
+                    .addComponent(bHapus)
+                    .addComponent(Bdetail))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -354,18 +360,20 @@ public class Admin extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bdetail;
     private javax.swing.JButton LO;
     private javax.swing.JButton Ucari;
     private javax.swing.JButton Uedit;
     private javax.swing.JButton Uhapus;
     private javax.swing.JButton Utambah;
+    private javax.swing.JButton bCari;
+    private javax.swing.JTextField bCariNama;
+    private javax.swing.JButton bEdit;
+    private javax.swing.JButton bHapus;
+    private javax.swing.JButton bTambah;
     private javax.swing.JTextField cari;
     private com.toedter.calendar.JDateChooser date;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -383,10 +391,9 @@ public class Admin extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lCari;
     private javax.swing.JTextField lId;
+    private javax.swing.JTable tBarang;
     private javax.swing.JTable tLog;
     private javax.swing.JTable tUser;
     // End of variables declaration//GEN-END:variables
@@ -458,6 +465,49 @@ public class Admin extends javax.swing.JPanel {
     public Object tLog(){
         return tLog;
     }
+    //-------------------------Barang--------------------//
+    public String getBnama(){
+        return bCariNama.getText();
+    }
+    public Object getBedit(){
+        return bEdit;
+    }
+    public Object getBhapus(){
+        return bHapus;
+    }
+    public Object getBtambah(){
+        return bTambah;
+    }
+    public Object getBdetail(){
+        return Bdetail;
+    }
+    public Object getBcari(){
+        return bCari;
+    }
+    public Object getTBarang(){
+       return tBarang;
+   }
+   public int getBarang(){
+        return tBarang.getSelectedRow();
+    }
+    public String getBarang2(){
+        return tBarang.getValueAt(0,0).toString();
+    }
+    public void setListBarang(String[][] list){
+        String[] judul = {"Id","Nama","Type/Seri","Stok","Harga"};
+        String[][] isi = new String[list.length][5];
+        for (int i = 0; i < list.length; i++){
+            isi[i][0] = list[i][0];
+            isi[i][1] = list[i][1];
+            isi[i][2] = list[i][2];
+            isi[i][3] = list[i][3];
+            isi[i][4] = list[i][4];
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
+        tBarang.setModel(tableModel);
+        tBarang.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    
     //---------------------------TOOL---------------------//
     public Object Lopress(){
         return LO;
@@ -469,9 +519,20 @@ public class Admin extends javax.swing.JPanel {
         Ucari.addActionListener(e);
         LO.addActionListener(e);
         lCari.addActionListener(e);
+        bCari.addActionListener(e);
+        bHapus.addActionListener(e);
+        bTambah.addActionListener(e);
+        bEdit.addActionListener(e);
+        Bdetail.addActionListener(e);
     }
     
     public void addAdapter(MouseAdapter e){
         tUser.addMouseListener(e);
+        tBarang.addMouseListener(e);
+    }
+    public void refresh(){
+        bCariNama.setText("");
+        cari.setText("");
+        lId.setText("");
     }
 }

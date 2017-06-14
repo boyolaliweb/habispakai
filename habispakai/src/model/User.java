@@ -16,6 +16,10 @@ public class User {
     private String email;
     private int del;
 
+    public User(long id) {
+        this.id = id;
+    }
+
     public User(long id, String nama, String pass, String email, int del) {
         this.id = id;
         this.nama = nama;

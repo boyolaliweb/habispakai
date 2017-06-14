@@ -102,6 +102,9 @@ public class Aplikasi {
     //-----------------------------User----------------------------//
     
     public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id,String Harga){
+        if (user_id.equals("999999999")){
+            user_id = "admin";
+        }
         int n = 0;
         n=d.makeidBarang();
         if (n>1000){
@@ -154,10 +157,16 @@ public class Aplikasi {
         }return null;
     }
     public void removeBarang(Barang b,String user_id){
+        if (user_id.equals("999999999")){
+            user_id = "admin";
+        }
         d.removeBarang(b.getId(), user_id);
         tBarang.remove(b);
     }
     public void editBarang(Barang b, String user_id){
+        if (user_id.equals("999999999")){
+            user_id = "admin";
+        }
         d.editBarang(b, user_id);
     }
 }
