@@ -332,15 +332,14 @@ public class MenuUser extends javax.swing.JPanel {
         return Src;
     }
    public void setListBarang(String[][] list){
-        String[] judul = {"Id","Nama","Type/Seri","Stok","Harga","Total Harga"};
-        String[][] isi = new String[list.length][6];
+        String[] judul = {"Id","Nama","Merk","Type/Seri","Satuan"};
+        String[][] isi = new String[list.length][5];
         for (int i = 0; i < list.length; i++){
             isi[i][0] = list[i][0];
             isi[i][1] = list[i][1];
             isi[i][2] = list[i][2];
             isi[i][3] = list[i][3];
             isi[i][4] = list[i][4];
-            isi[i][5] = Long.toString(Integer.parseInt(list[i][3])*Long.parseLong(list[i][4]));
         }
         DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
         tBarang.setModel(tableModel);

@@ -101,7 +101,7 @@ public class Aplikasi {
     
     //-----------------------------User----------------------------//
     
-    public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id,String Harga){
+    public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id){
         if (user_id.equals("999999999")){
             user_id = "admin";
         }
@@ -111,8 +111,8 @@ public class Aplikasi {
             n++;
         }else
             n = 1001;
-        Barang b = new Barang(n, nama, merk, type, satuan, masapakai, Ket, 0,0,Harga);
-        d.insertBarang(n, nama, merk, type, satuan, masapakai, Ket, user_id,Harga);
+        Barang b = new Barang(n, nama, merk, type, satuan, masapakai, Ket, 0);
+        d.insertBarang(n, nama, merk, type, satuan, masapakai, Ket, user_id);
         this.tBarang.add(b);
         
         return "ID : "+n+"\nNama : "+nama;
@@ -123,9 +123,9 @@ public class Aplikasi {
             if (tBarang.get(i).getDel()==0){
                 out[i][0] = Integer.toString(tBarang.get(i).getId());
                 out[i][1] = tBarang.get(i).getNama();
-                out[i][2] = tBarang.get(i).getType();
-                out[i][3] = Integer.toString(tBarang.get(i).getStok());
-                out[i][4] = tBarang.get(i).getHarga();
+                out[i][2] = tBarang.get(i).getWarna();
+                out[i][3] = tBarang.get(i).getType();
+                out[i][4] = tBarang.get(i).getSatuan();
             }
         }
         return out;
@@ -135,8 +135,8 @@ public class Aplikasi {
         out[0][0] = Integer.toString(u.getId());
         out[0][1] = u.getNama();
         out[0][2] = u.getType();
-        out[0][3] = Integer.toString(u.getStok());
-        out[0][4] = u.getHarga();
+        out[0][3] = u.getType();
+        out[0][4] = u.getSatuan();
         return out;
     }
     public Barang cariBarang(long id){

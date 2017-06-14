@@ -146,9 +146,9 @@ public class Database {
         } 
     }
     
-    public void insertBarang(int id, String nama, String merk, String type, String satuan,int masapakai,String ket,String user_id,String harga){
-        String s = "INSERT INTO `barang` (`id`, `nama`, `merk`, `type/seri`, `satuan`, `masa_pakai`,`stok`,`harga`, `ket`, `del`, `del_on`, `mod_by`, `mod_on`) VALUES ('"+
-                id+"', '"+nama+"', '"+merk+"', '"+type+"', '"+satuan+"', '"+masapakai+"','0','"+harga+"', '"+ket+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+    public void insertBarang(int id, String nama, String merk, String type, String satuan,int masapakai,String ket,String user_id){
+        String s = "INSERT INTO `barang` (`id`, `nama`, `merk`, `type/seri`, `satuan`, `masa_pakai`, `ket`, `del`, `del_on`, `mod_by`, `mod_on`) VALUES ('"+
+                id+"', '"+nama+"', '"+merk+"', '"+type+"', '"+satuan+"', '"+masapakai+"', '"+ket+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+id+"', 'insert Barang dengan id "+id+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
@@ -173,13 +173,13 @@ public class Database {
     
     public ArrayList<Barang> readBarang(){
         ArrayList<Barang> dBarang = new ArrayList();
-        String s = "select `id`, `nama`, `merk`, `type/seri`, `satuan`, `masa_pakai`,`stok`,`harga`, `ket`, `del` from `barang`";
+        String s = "select `id`, `nama`, `merk`, `type/seri`, `satuan`, `masa_pakai`, `ket`, `del` from `barang`";
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
                 Barang b;
                 if (rs.getInt("del")== 0){
-                    b = new Barang(rs.getInt("id"), rs.getString("nama"), rs.getString("merk"), rs.getString("type/seri"), rs.getString("satuan"), rs.getInt("masa_pakai"), rs.getString("ket"), rs.getInt("del"),rs.getInt("stok"),rs.getString("harga"));
+                    b = new Barang(rs.getInt("id"), rs.getString("nama"), rs.getString("merk"), rs.getString("type/seri"), rs.getString("satuan"), rs.getInt("masa_pakai"), rs.getString("ket"), rs.getInt("del"));
                     dBarang.add(b);
                 }
                 
@@ -224,14 +224,12 @@ public class Database {
     }
     public void editBarang(Barang b,String user_id){
         String s = "Update barang set nama = '"+b.getNama()+"', merk = '"+b.getWarna()+"', `type/seri` = '"+
-                b.getType()+"', satuan = '"+b.getSatuan()+"', masa_pakai = '"+b.getMasapakai()+"', stok = '"+b.getStok()+
-                "', harga = '"+b.getHarga()+"', ket = '"+b.getKet()+"', mod_by = '"+user_id+"', mod_on = NOW() where id = '"+
+                b.getType()+"', satuan = '"+b.getSatuan()+"', masa_pakai = '"+b.getMasapakai()+"', ket = '"+b.getKet()+"', mod_by = '"+user_id+"', mod_on = NOW() where id = '"+
                 b.getId()+"';";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+b.getId()+"', 'Edit Barang dengan id "+b.getId()+" nama  "+
                 b.getNama()+" merk "+b.getWarna()+" type/seri "+b.getType()+" satuan = "+b.getSatuan()+
-                " masa_pakai = "+b.getMasapakai()+" stok = "+b.getStok()+" harga = "+b.getHarga()+
-                " ket = "+b.getKet()+"', '"+user_id+
+                " masa_pakai = "+b.getMasapakai()+" ket = "+b.getKet()+"', '"+user_id+
                 "', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);

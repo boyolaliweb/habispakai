@@ -193,8 +193,8 @@ public class Controller extends MouseAdapter implements ActionListener{
                 }else{
                     String s = "Id      : "+tmpBarang.getId()+"\nNama   : "+tmpBarang.getNama()+"\nMerk     : "+
                             tmpBarang.getWarna()+"\nType/Resi   : "+tmpBarang.getType()+"\nSatuan       : "+
-                            tmpBarang.getSatuan()+"\nStok       : "+tmpBarang.getStok()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
-                            " Bulan\nKeterangan : "+tmpBarang.getKet()+"\nHarga     : "+tmpBarang.getHarga();
+                            tmpBarang.getSatuan()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
+                            " Bulan\nKeterangan : "+tmpBarang.getKet();
                     JOptionPane.showMessageDialog(null, s);
                 }  
             }else if(source.equals(ad.getBhapus())){
@@ -221,8 +221,6 @@ public class Controller extends MouseAdapter implements ActionListener{
                     currentView="6";
                     eb.setENamaBrg(tmpBarang.getNama());
                     eb.setEMerk(tmpBarang.getWarna());
-                    eb.setEHarga(tmpBarang.getHarga());
-                    eb.setEjumlah(Integer.toString(tmpBarang.getStok()));
                     eb.setESatuan(tmpBarang.getSatuan());
                     eb.setEket(tmpBarang.getKet());
                     eb.setEmasa(Integer.toString(tmpBarang.getMasapakai()));
@@ -271,8 +269,8 @@ public class Controller extends MouseAdapter implements ActionListener{
                 }else{
                     String s = "Id      : "+tmpBarang.getId()+"\nNama   : "+tmpBarang.getNama()+"\nMerk     : "+
                             tmpBarang.getWarna()+"\nType/Resi   : "+tmpBarang.getType()+"\nSatuan       : "+
-                            tmpBarang.getSatuan()+"\nStok       : "+tmpBarang.getStok()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
-                            " Bulan\nKeterangan : "+tmpBarang.getKet()+"\nHarga     : "+tmpBarang.getHarga();
+                            tmpBarang.getSatuan()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
+                            " Bulan\nKeterangan : "+tmpBarang.getKet();
                     JOptionPane.showMessageDialog(null, s);
                 }  
             }else if(source.equals(mu.getHapus())){
@@ -299,8 +297,6 @@ public class Controller extends MouseAdapter implements ActionListener{
                     currentView="6";
                     eb.setENamaBrg(tmpBarang.getNama());
                     eb.setEMerk(tmpBarang.getWarna());
-                    eb.setEHarga(tmpBarang.getHarga());
-                    eb.setEjumlah(Integer.toString(tmpBarang.getStok()));
                     eb.setESatuan(tmpBarang.getSatuan());
                     eb.setEket(tmpBarang.getKet());
                     eb.setEmasa(Integer.toString(tmpBarang.getMasapakai()));
@@ -328,7 +324,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                 if (ib.getINamabrg().equals("")||ib.getIKeterangan().equals("")||ib.getIMasa().equals("")||ib.getIMerk().equals("")||ib.getISatuan().equals("")||ib.getIType().equals("")){
                     JOptionPane.showMessageDialog(null, "Inputan tidak boleh ada yang kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else
-                   v = model.insertBarang(ib.getINamabrg(), ib.getIMerk(), ib.getIType(), ib.getISatuan(), Integer.parseInt(ib.getIMasa()), ib.getIKeterangan(), Long.toString(tmpUser2.getId()),ib.getHarga());
+                   v = model.insertBarang(ib.getINamabrg(), ib.getIMerk(), ib.getIType(), ib.getISatuan(), Integer.parseInt(ib.getIMasa()), ib.getIKeterangan(), Long.toString(tmpUser2.getId()));
                    ib.refresh();
                    JOptionPane.showMessageDialog(null, "Barang Berhasil ditambahkan \n"+v);
                    mu.setListBarang(model.getListOutBarang());
@@ -343,11 +339,9 @@ public class Controller extends MouseAdapter implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Ubah", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else
                     tmpBarang.setNama(eb.getENamabrg());
-                    tmpBarang.setHarga(eb.getEHarga());
                     tmpBarang.setKet(eb.getEket());
                     tmpBarang.setMasapakai(Integer.parseInt(eb.getEmasa()));
                     tmpBarang.setSatuan(eb.getEsatuan());
-                    tmpBarang.setStok(Integer.parseInt(eb.getEjumlah()));
                     tmpBarang.setType(eb.getEType());
                     tmpBarang.setWarna(eb.getEMerk());
                     model.editBarang(tmpBarang, Long.toString(tmpUser2.getId()));

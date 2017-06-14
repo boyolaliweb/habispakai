@@ -18,10 +18,9 @@ public class Barang {
     private int masapakai;
     private String ket;
     private int del;
-    private int stok;
-    private String harga;
+ 
 
-    public Barang(int id, String nama, String warna, String type, String satuan, int masapakai, String ket, int del,int stok,String harga) {
+    public Barang(int id, String nama, String warna, String type, String satuan, int masapakai, String ket, int del) {
         this.id = id;
         this.nama = nama;
         this.warna = warna;
@@ -30,8 +29,6 @@ public class Barang {
         this.masapakai = masapakai;
         this.ket = ket;
         this.del = del;
-        this.stok = stok;
-        this.harga = harga;
     }
 
     public int getId() {
@@ -98,20 +95,6 @@ public class Barang {
         this.del = del;
     }
 
-    public int getStok() {
-        return stok;
-    }
-
-    public void setStok(int stok) {
-        this.stok = stok;
-    }
-
-    public String getHarga() {
-        return harga;
-    }
-
-    public void setHarga(String harga) {
-        this.harga = harga;
-    }
+    
     
 }
