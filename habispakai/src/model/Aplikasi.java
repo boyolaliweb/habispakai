@@ -51,11 +51,12 @@ public class Aplikasi {
     }
     public String insertUser(String nama, String email){
         long n = 0;
-        for(int i = 0;i<tUser.size();i++){
+        /*for(int i = 0;i<tUser.size();i++){
             if (tUser.get(i).getId()>n){
                 n=tUser.get(i).getId();
             }
-        }
+        }*/
+        n=d.makeidUser();
         Random rand = new Random();
         int  x = rand.nextInt(50) + 1;
         User u = new User((n+1),nama,Integer.toString(x),email,0);
@@ -102,11 +103,7 @@ public class Aplikasi {
     
     public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id,String Harga){
         int n = 0;
-        for(int i = 0;i<tBarang.size();i++){
-            if (tBarang.get(i).getId()>n){
-                n=tBarang.get(i).getId();
-            }
-        }
+        n=d.makeidBarang();
         if (n>1000){
             n++;
         }else
@@ -157,7 +154,10 @@ public class Aplikasi {
         }return null;
     }
     public void removeBarang(Barang b,String user_id){
-        d.removeUser(b.getId(), user_id);
+        d.removeBarang(b.getId(), user_id);
         tBarang.remove(b);
+    }
+    public void editBarang(Barang b, String user_id){
+        d.editBarang(b, user_id);
     }
 }

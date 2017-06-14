@@ -80,6 +80,36 @@ public class Database {
         
         return d;
     }
+    public long makeidUser() {
+        String s = "select id from user";
+        ResultSet rs = getData(s);
+        long d = 0;
+        try {
+                while(rs.next()){
+                        d = rs.getLong("id");
+                }
+            } catch (SQLException ex) {
+                System.out.println("1");
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        return d;
+    }
+    public int makeidBarang() {
+        String s = "select id from barang";
+        ResultSet rs = getData(s);
+        int d = 0;
+        try {
+                while(rs.next()){
+                        d = rs.getInt("id");
+                }
+            } catch (SQLException ex) {
+                System.out.println("1");
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        return d;
+    }
     
     public void insertUser(long id,String nama,String pass,String email,String user_id){
         String s = "INSERT INTO `user` (`id`, `nama`, `pass`, `email`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
@@ -175,6 +205,24 @@ public class Database {
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+u.getId()+"', 'Edit User dengan id "+u.getId()+" nama  "+
                 u.getNama()+" pass "+u.getPass()+" email "+u.getEmail()+"', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        try {
+            query(s);
+            query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } 
+    }
+    public void editBarang(Barang b,String user_id){
+        String s = "Update barang set nama = '"+b.getNama()+"', merk = '"+b.getWarna()+"', `type/seri` = '"+
+                b.getType()+"', satuan = '"+b.getSatuan()+"', masa_pakai = '"+b.getMasapakai()+"', stok = '"+b.getStok()+
+                "', harga = '"+b.getHarga()+"', ket = '"+b.getKet()+"', mod_by = '"+user_id+"', mod_on = NOW() where id = '"+
+                b.getId()+"';";
+        String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"','"+b.getId()+"', 'Edit Barang dengan id "+b.getId()+" nama  "+
+                b.getNama()+" merk "+b.getWarna()+" type/seri "+b.getType()+" satuan = "+b.getSatuan()+
+                " masa_pakai = "+b.getMasapakai()+" stok = "+b.getStok()+" harga = "+b.getHarga()+
+                " ket = "+b.getKet()+"', '"+user_id+
+                "', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
