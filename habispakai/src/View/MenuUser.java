@@ -426,6 +426,38 @@ public class MenuUser extends javax.swing.JPanel {
    public Object getPubah(){
        return pUbah;
    }
+   //-----------------------------transaksi---------------------//
+   public String tNamaBrg(){
+       return Nbarang.getText();
+   }
+   public String tQty(){
+       return qty.getText();
+   }
+   public String tHarga(){
+       return harga.getText();
+   }
+   public Object tTambah(){
+       return tTambah;
+   }
+   public Object tSimpan(){
+       return tSimpan;
+   }
+   public void setListTransaksi(String[][] list){
+        String[] judul = {"Id","Nama","Merk","QTY","Harga Satuan", "Total"};
+        String[][] isi = new String[list.length][6];
+        for (int i = 0; i < list.length; i++){
+            isi[i][0] = list[i][0];
+            isi[i][1] = list[i][1];
+            isi[i][2] = list[i][2];
+            isi[i][3] = list[i][3];
+            isi[i][4] = list[i][4];
+            isi[i][5] = list[i][5];
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
+        tTransaksi.setModel(tableModel);
+        tTransaksi.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+   //----------------------Tool---------------------//
    public void addListener(ActionListener e){
        LogOut.addActionListener(e);
        Add.addActionListener(e);
@@ -434,6 +466,8 @@ public class MenuUser extends javax.swing.JPanel {
        Edit.addActionListener(e);
        Src.addActionListener(e);
        pUbah.addActionListener(e);
+       tTambah.addActionListener(e);
+       tSimpan.addActionListener(e);
    }
    public void addAdapter(MouseAdapter e){
         tBarang.addMouseListener(e);
