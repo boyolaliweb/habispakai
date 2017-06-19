@@ -18,6 +18,7 @@ import java.util.Random;
 public class Aplikasi {
     ArrayList<User> tUser;
     ArrayList<Barang> tBarang;
+    ArrayList<Transaksi> tTransaksi;
     Database d;
 
     public Aplikasi() {
@@ -171,5 +172,40 @@ public class Aplikasi {
     }
     public void editPass(String PassL,String PassN, Long id){
         d.ubahPass(PassL, PassN, id);
+    }
+    public boolean insertTransaksi(String namaBarang, int Qty, String Harga, String user_id){
+        tTransaksi = new ArrayList();
+        if (cariBarang3(namaBarang) == null){
+            return false;
+        } 
+        d.insertTransaksi(cariBarang3(namaBarang).getId(), user_id, Qty, Harga);
+        Transaksi t = new Transaksi(cariBarang3(namaBarang).getId(),namaBarang,cariBarang3(namaBarang).getWarna(),Qty,Harga);
+        tTransaksi.add(t);
+        return true;
+    }
+    public String[][] getListTransaksi(){
+        String out[][] = new String[tTransaksi.size()][6];
+        for (int i = 0;i < tTransaksi.size();i++){
+            out[i][0] = Long.toString(tTransaksi.get(i).getIdBarang());
+            out[i][1] = tTransaksi.get(i).getNamaBarang();
+            out[i][2] = tTransaksi.get(i).getMerk();
+            out[i][3] = Integer.toString(tTransaksi.get(i).getQty());
+            out[i][4] = tTransaksi.get(i).getHarga();
+            out[i][5] = tTransaksi.get(i).getTotalHarga();
+        }
+        return out;
+    }
+    public String getTotalTransaksi(){
+        long n = 0;
+        for (int i = 0;i < tTransaksi.size();i++){
+            n = n + Long.parseLong(tTransaksi.get(i).getTotalHarga());
+        }
+        return Long.toString(n);
+    }
+    public int sizeTransaksi(){
+        return tTransaksi.size();
+    }
+    public void insertNota(String id){
+        d.insertNota(tTransaksi.size(), getTotalTransaksi(), id);
     }
 }

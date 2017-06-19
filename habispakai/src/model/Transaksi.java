@@ -12,16 +12,26 @@ package model;
 public class Transaksi {
     private long idBarang;
     private String namaBarang;
+    private String merk;
     private int Qty;
     private String Harga;
     private String totalHarga;
 
-    public Transaksi(long idBarang, String namaBarang, int Qty, String Harga) {
+    public Transaksi(long idBarang, String namaBarang,String merk, int Qty, String Harga) {
         this.idBarang = idBarang;
         this.namaBarang = namaBarang;
+        this.merk = merk;
         this.Qty = Qty;
         this.Harga = Harga;
         this.totalHarga = Long.toString(Qty * Long.parseLong(Harga));
+    }
+
+    public String getMerk() {
+        return merk;
+    }
+
+    public void setMerk(String merk) {
+        this.merk = merk;
     }
 
     public long getIdBarang() {

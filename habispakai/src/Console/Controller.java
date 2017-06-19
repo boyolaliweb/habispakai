@@ -314,7 +314,26 @@ public class Controller extends MouseAdapter implements ActionListener{
                     tmpUser2.setPass(mu.getPassN());
                     JOptionPane.showMessageDialog(null, "Password Berhasil di Ubah");
                 }
+            }else if (source.equals(mu.tTambah())){
+                if (mu.tNamaBrg().equals("")||mu.tHarga().equals("")||mu.tQty().equals("")){
+                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if(model.cariBarang3(mu.tNamaBrg())==null){
+                    JOptionPane.showMessageDialog(null, "Nama Barang tidak ditemukan, Harap Menambahkan Barang", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else {
+                    model.insertTransaksi(mu.tNamaBrg(), Integer.parseInt(mu.tQty()), mu.tHarga(), Long.toString(tmpUser2.getId()));
+                    mu.setListTransaksi(model.getListTransaksi());
+                    mu.setSubtotal(model.getTotalTransaksi());
+                }
+            }else if(source.equals(mu.tSimpan())){
+                if (model.sizeTransaksi() == 0){
+                    JOptionPane.showMessageDialog(null, "Masukan Barang yang mau ditransaksi", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    model.insertNota(Long.toString(tmpUser2.getId()));
+                    mu.refresh();
+                    JOptionPane.showMessageDialog(null, "Transaksi Berhasil disimpan");
+                }
             }
+            
         } else if(currentView.equals("5")){
             String v = null;
             if(source.equals(ib.getBack())){

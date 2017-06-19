@@ -442,6 +442,10 @@ public class MenuUser extends javax.swing.JPanel {
    public Object tSimpan(){
        return tSimpan;
    }
+   public void setSubtotal(String s){
+       tSubtotal.setText(s);
+       tSubtotal.enable(false);
+   }
    public void setListTransaksi(String[][] list){
         String[] judul = {"Id","Nama","Merk","QTY","Harga Satuan", "Total"};
         String[][] isi = new String[list.length][6];
@@ -457,6 +461,16 @@ public class MenuUser extends javax.swing.JPanel {
         tTransaksi.setModel(tableModel);
         tTransaksi.getColumnModel().getColumn(0).setPreferredWidth(20);
     }
+   public String[][] setKosong(){
+        String[][] isi = new String[1][6];
+        isi[0][0] = "";
+        isi[0][1] = "";
+        isi[0][2] = "";
+        isi[0][3] = "";
+        isi[0][4] = "";
+        isi[0][5] = "";
+        return isi;
+   }
    //----------------------Tool---------------------//
    public void addListener(ActionListener e){
        LogOut.addActionListener(e);
@@ -474,5 +488,9 @@ public class MenuUser extends javax.swing.JPanel {
     }
    public void refresh(){
        SrcNama.setText("");
+       Nbarang.setText("");
+       qty.setText("");
+       harga.setText("");
+       setListTransaksi(setKosong());
    }
 }

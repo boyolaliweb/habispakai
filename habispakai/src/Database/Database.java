@@ -340,9 +340,9 @@ public class Database {
     }
     public void insertTransaksi(int barang_id,String user_id,int qty,String harga){
         String s = "INSERT INTO `transaksi` (`id`, `id_nota`, `waktu_trx`, `barang_id`, `qty`, `harga`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`)"
-                + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', '0000-00-00 00:00:00.000000', '"+barang_id+"', '"+qty+"', '"+harga+"', '"+user_id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+                + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', NOW() , '"+barang_id+"', '"+qty+"', '"+harga+"', '"+user_id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
-                +(makeidLog()+1)+"','"+(makeidTransaksi()+1)+"', 'insert Nota dengan id "+(makeidTransaksi()+1)+" 4', '"+user_id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+                +(makeidLog()+1)+"','"+(makeidTransaksi()+1)+"', 'insert Transaksi dengan id "+(makeidTransaksi()+1)+" 4', '"+user_id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
