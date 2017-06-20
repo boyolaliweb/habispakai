@@ -57,6 +57,19 @@ public class MenuUser extends javax.swing.JPanel {
         tSubtotal = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tSimpan = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        Nbarang1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        qty1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        harga1 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tTransaksi1 = new javax.swing.JTable();
+        tTambah1 = new javax.swing.JButton();
+        tSubtotal1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tSimpan1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -254,6 +267,92 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Transaksi", jPanel4);
 
+        jLabel6.setText("Nama Barang       :");
+
+        jLabel7.setText("Qty                      :");
+
+        jLabel9.setText("Harga                  :");
+
+        tTransaksi1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Barang", "Nama Barang", "Merk/Type", "Qty", "Harga Satuan", "Total"
+            }
+        ));
+        jScrollPane3.setViewportView(tTransaksi1);
+
+        tTambah1.setText("Tambah");
+
+        jLabel10.setText("Sub Total    :");
+
+        tSimpan1.setText("Simpan");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(tSubtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tTambah1)
+                    .addComponent(tSimpan1)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel7)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Nbarang1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(harga1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(25, 25, 25))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(Nbarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(harga1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tTambah1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tSubtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addComponent(tSimpan1)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        Barang.addTab("Transaksi Keluar", jPanel3);
+
         jLabel16.setText("Password Lama          :");
 
         jLabel17.setText("Password Baru           :");
@@ -340,6 +439,7 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JButton Edit;
     private javax.swing.JButton LogOut;
     private javax.swing.JTextField Nbarang;
+    private javax.swing.JTextField Nbarang1;
     private javax.swing.JPasswordField PassB;
     private javax.swing.JPasswordField PassL;
     private javax.swing.JButton Print;
@@ -348,7 +448,9 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JPasswordField cPass;
     private javax.swing.JButton detail;
     private javax.swing.JTextField harga;
+    private javax.swing.JTextField harga1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -356,19 +458,29 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton pUbah;
     private javax.swing.JTextField qty;
+    private javax.swing.JTextField qty1;
     private javax.swing.JTable tBarang;
     private javax.swing.JButton tSimpan;
+    private javax.swing.JButton tSimpan1;
     private javax.swing.JTextField tSubtotal;
+    private javax.swing.JTextField tSubtotal1;
     private javax.swing.JButton tTambah;
+    private javax.swing.JButton tTambah1;
     private javax.swing.JTable tTransaksi;
+    private javax.swing.JTable tTransaksi1;
     // End of variables declaration//GEN-END:variables
    public Object getTambah(){
        return Add;

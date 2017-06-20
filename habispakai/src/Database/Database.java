@@ -149,11 +149,13 @@ public class Database {
     public void insertBarang(int id, String nama, String merk, String type, String satuan,int masapakai,String ket,String user_id){
         String s = "INSERT INTO `barang` (`id`, `nama`, `merk`, `type/seri`, `satuan`, `masa_pakai`, `ket`, `del`, `del_on`, `mod_by`, `mod_on`) VALUES ('"+
                 id+"', '"+nama+"', '"+merk+"', '"+type+"', '"+satuan+"', '"+masapakai+"', '"+ket+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+        String v = "INSERT INTO `stok` (`id_barang`, `stok`) VALUES ('"+id+"', '0')";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
-                +(makeidLog()+1)+"','"+id+"', 'insert Barang dengan id "+id+"', '"+user_id+" 2', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+                +(makeidLog()+1)+"','"+id+"', 'insert Barang dengan id "+id+" 2', '"+user_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
+            query(v);
         } catch (SQLException ex) {
             System.out.println(ex);
         } 
@@ -326,6 +328,20 @@ public class Database {
         
         return d;
     }
+    public int cekStok(long id){
+        String s = "select id_barang, stok from stok";
+        ResultSet rs = getData(s);
+        int i = 0;
+        try {
+            while(rs.next()){
+                if (rs.getLong("id_Barang")==id)
+                    i = rs.getInt("stok");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return i;
+    }
     public void insertNota(int total_barang,String total_harga,String id){
         String s = "INSERT INTO `nota` (`id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`) "
                 + "VALUES ('"+(makeidNota()+1)+"', '"+total_barang+"', '"+total_harga+"', NOW(), '"+id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
@@ -341,11 +357,13 @@ public class Database {
     public void insertTransaksi(int barang_id,String user_id,int qty,String harga){
         String s = "INSERT INTO `transaksi` (`id`, `id_nota`, `waktu_trx`, `barang_id`, `qty`, `harga`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`)"
                 + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', NOW() , '"+barang_id+"', '"+qty+"', '"+harga+"', '"+user_id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+        String v = "update stok set stok = '"+(cekStok(barang_id)+qty)+"' where id_barang = '"+barang_id+"';";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+(makeidTransaksi()+1)+"', 'insert Transaksi dengan id "+(makeidTransaksi()+1)+" 4', '"+user_id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
+            query(v);
         } catch (SQLException ex) {
             System.out.println(ex);
         }

@@ -24,6 +24,7 @@ public class Aplikasi {
     public Aplikasi() {
         tUser = new ArrayList();
         tBarang = new ArrayList();
+        tTransaksi = new ArrayList();
         d = new Database();
         tUser = d.readUser();
         tBarang = d.readBarang();
@@ -174,7 +175,6 @@ public class Aplikasi {
         d.ubahPass(PassL, PassN, id);
     }
     public boolean insertTransaksi(String namaBarang, int Qty, String Harga, String user_id){
-        tTransaksi = new ArrayList();
         if (cariBarang3(namaBarang) == null){
             return false;
         } 
@@ -207,5 +207,6 @@ public class Aplikasi {
     }
     public void insertNota(String id){
         d.insertNota(tTransaksi.size(), getTotalTransaksi(), id);
+        tTransaksi = new ArrayList();
     }
 }
