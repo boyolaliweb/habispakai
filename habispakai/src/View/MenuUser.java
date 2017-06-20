@@ -59,17 +59,17 @@ public class MenuUser extends javax.swing.JPanel {
         tSimpan = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        Nbarang1 = new javax.swing.JTextField();
+        tkbarang = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        qty1 = new javax.swing.JTextField();
+        tkqty = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        harga1 = new javax.swing.JTextField();
+        tkharga = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tTransaksi1 = new javax.swing.JTable();
-        tTambah1 = new javax.swing.JButton();
-        tSubtotal1 = new javax.swing.JTextField();
+        tkTabel = new javax.swing.JTable();
+        tkTambah = new javax.swing.JButton();
+        tkSubtotal = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        tSimpan1 = new javax.swing.JButton();
+        tkSimpan = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -273,7 +273,7 @@ public class MenuUser extends javax.swing.JPanel {
 
         jLabel9.setText("Harga                  :");
 
-        tTransaksi1.setModel(new javax.swing.table.DefaultTableModel(
+        tkTabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -284,13 +284,13 @@ public class MenuUser extends javax.swing.JPanel {
                 "ID Barang", "Nama Barang", "Merk/Type", "Qty", "Harga Satuan", "Total"
             }
         ));
-        jScrollPane3.setViewportView(tTransaksi1);
+        jScrollPane3.setViewportView(tkTabel);
 
-        tTambah1.setText("Tambah");
+        tkTambah.setText("Tambah");
 
         jLabel10.setText("Sub Total    :");
 
-        tSimpan1.setText("Simpan");
+        tkSimpan.setText("Simpan");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -306,9 +306,9 @@ public class MenuUser extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(18, 18, 18)
-                        .addComponent(tSubtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tTambah1)
-                    .addComponent(tSimpan1)
+                        .addComponent(tkSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tkTambah)
+                    .addComponent(tkSimpan)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6)
@@ -318,9 +318,9 @@ public class MenuUser extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Nbarang1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(harga1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tkbarang, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tkqty, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tkharga, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
@@ -329,25 +329,25 @@ public class MenuUser extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(Nbarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tkbarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tkqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(harga1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tkharga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tTambah1)
+                .addComponent(tkTambah)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tSubtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tkSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
-                .addComponent(tSimpan1)
+                .addComponent(tkSimpan)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -439,7 +439,6 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JButton Edit;
     private javax.swing.JButton LogOut;
     private javax.swing.JTextField Nbarang;
-    private javax.swing.JTextField Nbarang1;
     private javax.swing.JPasswordField PassB;
     private javax.swing.JPasswordField PassL;
     private javax.swing.JButton Print;
@@ -448,7 +447,6 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JPasswordField cPass;
     private javax.swing.JButton detail;
     private javax.swing.JTextField harga;
-    private javax.swing.JTextField harga1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
@@ -471,16 +469,18 @@ public class MenuUser extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton pUbah;
     private javax.swing.JTextField qty;
-    private javax.swing.JTextField qty1;
     private javax.swing.JTable tBarang;
     private javax.swing.JButton tSimpan;
-    private javax.swing.JButton tSimpan1;
     private javax.swing.JTextField tSubtotal;
-    private javax.swing.JTextField tSubtotal1;
     private javax.swing.JButton tTambah;
-    private javax.swing.JButton tTambah1;
     private javax.swing.JTable tTransaksi;
-    private javax.swing.JTable tTransaksi1;
+    private javax.swing.JButton tkSimpan;
+    private javax.swing.JTextField tkSubtotal;
+    private javax.swing.JTable tkTabel;
+    private javax.swing.JButton tkTambah;
+    private javax.swing.JTextField tkbarang;
+    private javax.swing.JTextField tkharga;
+    private javax.swing.JTextField tkqty;
     // End of variables declaration//GEN-END:variables
    public Object getTambah(){
        return Add;
@@ -573,6 +573,42 @@ public class MenuUser extends javax.swing.JPanel {
         tTransaksi.setModel(tableModel);
         tTransaksi.getColumnModel().getColumn(0).setPreferredWidth(20);
     }
+   //---------------------Transaksi Keluar--------------//
+   public String tkNamaBrg(){
+       return tkbarang.getText();
+   }
+   public String tkQty(){
+       return tkqty.getText();
+   }
+   public String tkHarga(){
+       return tkharga.getText();
+   }
+   public Object tkTambah(){
+       return tkTambah;
+   }
+   public Object tkSimpan(){
+       return tkSimpan;
+   }
+   public void setTkSubtotal(String s){
+       tkSubtotal.setText(s);
+       tkSubtotal.enable(false);
+   }
+   public void setListTkTransaksi(String[][] list){
+        String[] judul = {"Id","Nama","Merk","QTY","Harga Satuan", "Total"};
+        String[][] isi = new String[list.length][6];
+        for (int i = 0; i < list.length; i++){
+            isi[i][0] = list[i][0];
+            isi[i][1] = list[i][1];
+            isi[i][2] = list[i][2];
+            isi[i][3] = list[i][3];
+            isi[i][4] = list[i][4];
+            isi[i][5] = list[i][5];
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
+        tkTabel.setModel(tableModel);
+        tkTabel.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+   //----------------------Tool---------------------//
    public String[][] setKosong(){
         String[][] isi = new String[1][6];
         isi[0][0] = "";
@@ -583,7 +619,6 @@ public class MenuUser extends javax.swing.JPanel {
         isi[0][5] = "";
         return isi;
    }
-   //----------------------Tool---------------------//
    public void addListener(ActionListener e){
        LogOut.addActionListener(e);
        Add.addActionListener(e);
@@ -594,6 +629,8 @@ public class MenuUser extends javax.swing.JPanel {
        pUbah.addActionListener(e);
        tTambah.addActionListener(e);
        tSimpan.addActionListener(e);
+       tkTambah.addActionListener(e);
+       tkSimpan.addActionListener(e);
    }
    public void addAdapter(MouseAdapter e){
         tBarang.addMouseListener(e);
@@ -604,5 +641,7 @@ public class MenuUser extends javax.swing.JPanel {
        qty.setText("");
        harga.setText("");
        setListTransaksi(setKosong());
+       tSubtotal.setText("");
+       tkSubtotal.setText("");
    }
 }

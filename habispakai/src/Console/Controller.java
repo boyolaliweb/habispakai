@@ -93,13 +93,13 @@ public class Controller extends MouseAdapter implements ActionListener{
     @Override
     public void mousePressed(MouseEvent e){
         Object source = e.getSource();
-        if(source.equals(mu.getTBarang())&& mu.getBarang()>=0 && Integer.parseInt(mu.getBarang2())!= 1001){
+        if(source.equals(mu.getTBarang())&& mu.getBarang()>=0 && Integer.parseInt(mu.getBarang2())== 1001){
             tmpBarang = model.cariBarang(Integer.parseInt(mu.getBarang2()));
         }else if (source.equals(mu.getTBarang()) && mu.getBarang()>=0){
-            tmpBarang = model.cariBarang2(mu.getBarang());
+            tmpBarang = model.cariBarang2(mu.getBarang());  
         }else
             tmpBarang = null;
-        if(source.equals(ad.getTBarang())&& ad.getBarang()>=0 && Integer.parseInt(ad.getBarang2())!= 1001){
+        if(source.equals(ad.getTBarang())&& ad.getBarang()>=0 && Integer.parseInt(ad.getBarang2())== 1001){
             tmpBarang2 = model.cariBarang(Integer.parseInt(ad.getBarang2()));
         }else if (source.equals(ad.getTBarang()) && ad.getBarang()>=0){
             tmpBarang2 = model.cariBarang2(ad.getBarang());
@@ -268,6 +268,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                 if(tmpBarang==null){
                    JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Lihat", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else{
+                    System.out.println(mu.getBarang2());
                     String s = "Id      : "+tmpBarang.getId()+"\nNama   : "+tmpBarang.getNama()+"\nMerk     : "+
                             tmpBarang.getWarna()+"\nType/Resi   : "+tmpBarang.getType()+"\nSatuan       : "+
                             tmpBarang.getSatuan()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
@@ -330,6 +331,26 @@ public class Controller extends MouseAdapter implements ActionListener{
                     JOptionPane.showMessageDialog(null, "Masukan Barang yang mau ditransaksi", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else{
                     model.insertNota(Long.toString(tmpUser2.getId()));
+                    mu.refresh();
+                    JOptionPane.showMessageDialog(null, "Transaksi Berhasil disimpan");
+                }
+            }else if (source.equals(mu.tkTambah())){
+                if (mu.tkNamaBrg().equals("")||mu.tkHarga().equals("")||mu.tkQty().equals("")){
+                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if(model.cariBarang3(mu.tkNamaBrg())==null){
+                    JOptionPane.showMessageDialog(null, "Nama Barang tidak ditemukan, Harap Menambahkan Barang", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if(!model.cekStok(mu.tkNamaBrg(), Integer.parseInt(mu.tkQty())).equals("")){
+                    JOptionPane.showMessageDialog(null, model.cekStok(mu.tkNamaBrg(), Integer.parseInt(mu.tkQty())), "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else {
+                    model.insertTransaksi2(mu.tkNamaBrg(), Integer.parseInt(mu.tkQty()), mu.tkHarga(), Long.toString(tmpUser2.getId()));
+                    mu.setListTkTransaksi(model.getListTransaksi());
+                    mu.setTkSubtotal(model.getTotalTransaksi());
+                }
+            }else if(source.equals(mu.tkSimpan())){
+                if (model.sizeTransaksi() == 0){
+                    JOptionPane.showMessageDialog(null, "Masukan Barang yang mau ditransaksi", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    model.insertNota2(Long.toString(tmpUser2.getId()));
                     mu.refresh();
                     JOptionPane.showMessageDialog(null, "Transaksi Berhasil disimpan");
                 }

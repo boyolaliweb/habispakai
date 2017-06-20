@@ -164,7 +164,7 @@ public class Database {
     public void removeBarang(int id, String User_id){
         String s = "update barang set del = 1,del_on = NOW(),mod_by = '"+User_id+"',mod_on = NOW() where id = '"+id+"';";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
-                +(makeidLog()+1)+"','"+id+"', 'Hapus User dengan id "+id+"', '"+User_id+" 2', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+                +(makeidLog()+1)+"','"+id+"', 'Hapus Barang dengan id "+id+"2', '"+User_id+"', NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
@@ -344,7 +344,19 @@ public class Database {
     }
     public void insertNota(int total_barang,String total_harga,String id){
         String s = "INSERT INTO `nota` (`id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`) "
-                + "VALUES ('"+(makeidNota()+1)+"', '"+total_barang+"', '"+total_harga+"', NOW(), '"+id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+                + "VALUES ('"+(makeidNota()+1)+"', '+"+total_barang+"', '"+total_harga+"', NOW(), '"+id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+        String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"','"+(makeidNota()+1)+"', 'insert Nota dengan id "+(makeidNota()+1)+" 3', '"+id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        try {
+            query(s);
+            query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    public void insertNota2(int total_barang,String total_harga,String id){
+        String s = "INSERT INTO `nota` (`id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`) "
+                + "VALUES ('"+(makeidNota()+1)+"', '-"+total_barang+"', '"+total_harga+"', NOW(), '"+id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+(makeidNota()+1)+"', 'insert Nota dengan id "+(makeidNota()+1)+" 3', '"+id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
@@ -355,14 +367,40 @@ public class Database {
         }
     }
     public void insertTransaksi(int barang_id,String user_id,int qty,String harga){
-        String s = "INSERT INTO `transaksi` (`id`, `id_nota`, `waktu_trx`, `barang_id`, `qty`, `harga`, `user_id`, `del`, `del_on`, `mod_by`, `mod_on`)"
-                + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', NOW() , '"+barang_id+"', '"+qty+"', '"+harga+"', '"+user_id+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
-        String v = "update stok set stok = '"+(cekStok(barang_id)+qty)+"' where id_barang = '"+barang_id+"';";
+        String s = "INSERT INTO `transaksi` (`id`, `id_nota`, `barang_id`, `qty`, `harga`, `del`, `del_on`, `mod_by`, `mod_on`)"
+                + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', '"+barang_id+"', '+"+qty+"', '"+harga+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
         String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
                 +(makeidLog()+1)+"','"+(makeidTransaksi()+1)+"', 'insert Transaksi dengan id "+(makeidTransaksi()+1)+" 4', '"+user_id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
         try {
             query(s);
             query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    public void insertTransaksi2(int barang_id,String user_id,int qty,String harga){
+        String s = "INSERT INTO `transaksi` (`id`, `id_nota`, `barang_id`, `qty`, `harga`, `del`, `del_on`, `mod_by`, `mod_on`)"
+                + " VALUES ('"+(makeidTransaksi()+1)+"', '"+(makeidNota()+1)+"', '"+barang_id+"', '-"+qty+"', '"+harga+"', '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000')";
+        String x = "INSERT INTO `log` (`id`, `id_user`, `even`, `user_id`, `time`, `del`, `del_on`, `modified_by`, `modified_on`) VALUES ('"
+                +(makeidLog()+1)+"','"+(makeidTransaksi()+1)+"', 'insert Transaksi dengan id "+(makeidTransaksi()+1)+" 4', '"+user_id+"',NOW(), '0', '0000-00-00 00:00:00.000000', '', '0000-00-00 00:00:00.000000');";
+        try {
+            query(s);
+            query(x);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    public void setStok(int qty,long barang_id){
+        String v = "update stok set stok = '"+(cekStok(barang_id)+qty)+"' where id_barang = '"+barang_id+"';";
+        try {
+            query(v);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    public void setStok2(int qty,long barang_id){
+        String v = "update stok set stok = '"+(cekStok(barang_id)-qty)+"' where id_barang = '"+barang_id+"';";
+        try {
             query(v);
         } catch (SQLException ex) {
             System.out.println(ex);

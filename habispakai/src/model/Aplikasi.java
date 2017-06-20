@@ -183,6 +183,15 @@ public class Aplikasi {
         tTransaksi.add(t);
         return true;
     }
+    public boolean insertTransaksi2(String namaBarang, int Qty, String Harga, String user_id){
+        if (cariBarang3(namaBarang) == null){
+            return false;
+        } 
+        d.insertTransaksi2(cariBarang3(namaBarang).getId(), user_id, Qty, Harga);
+        Transaksi t = new Transaksi(cariBarang3(namaBarang).getId(),namaBarang,cariBarang3(namaBarang).getWarna(),Qty,Harga);
+        tTransaksi.add(t);
+        return true;
+    }
     public String[][] getListTransaksi(){
         String out[][] = new String[tTransaksi.size()][6];
         for (int i = 0;i < tTransaksi.size();i++){
@@ -207,6 +216,22 @@ public class Aplikasi {
     }
     public void insertNota(String id){
         d.insertNota(tTransaksi.size(), getTotalTransaksi(), id);
+        for (int i = 0;i < tTransaksi.size();i++){
+            d.setStok(tTransaksi.get(i).getQty(), tTransaksi.get(i).getIdBarang());
+        }
         tTransaksi = new ArrayList();
+    }
+    public void insertNota2(String id){
+        d.insertNota2(tTransaksi.size(), getTotalTransaksi(), id);
+        for (int i = 0;i < tTransaksi.size();i++){
+            d.setStok2(tTransaksi.get(i).getQty(), tTransaksi.get(i).getIdBarang());
+        }
+        tTransaksi = new ArrayList();
+    }
+    public String cekStok(String namaBarang,int Qty){
+        if (d.cekStok(cariBarang3(namaBarang).getId()) < Qty){
+            return "Stok tidak cukup, jumlah stok saat ini "+d.cekStok(cariBarang3(namaBarang).getId());
+        }
+        return "";
     }
 }
