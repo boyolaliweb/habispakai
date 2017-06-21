@@ -30,7 +30,9 @@ public class Driver {
         
         //Database d = new Database();
        // d.removeUser(1, "admin");
-        
+        //String s = "aaple";
+       // s = s.substring(s.length() - 1, s.length());
+        //System.out.println(s);
     }
     
 }
