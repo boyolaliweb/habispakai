@@ -492,7 +492,7 @@ public class MenuUser extends javax.swing.JPanel {
         return tBarang.getSelectedRow();
     }
     public String getBarang2(){
-        return tBarang.getValueAt(0,0).toString();
+        return tBarang.getValueAt(tBarang.getSelectedRow(),0).toString();
     }
     public String getSrcNama(){
         return SrcNama.getText();

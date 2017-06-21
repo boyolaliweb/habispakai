@@ -25,12 +25,11 @@ public class Driver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-       Aplikasi ap = new Aplikasi();
+        Aplikasi ap = new Aplikasi();
         new Controller(ap);
         
         //Database d = new Database();
        // d.removeUser(1, "admin");
-       
         
     }
     

@@ -6,6 +6,7 @@
 package Console;
 
 import View.Admin;
+import View.DetailNota;
 import View.EditUser;
 import View.Editbarang;
 import View.InputBarang;
@@ -42,6 +43,8 @@ public class Controller extends MouseAdapter implements ActionListener{
     private User tmpUser2;
     private Barang tmpBarang;
     private Barang tmpBarang2;
+    private String idNota;
+    private String idUser;
     
     private Login L;
     private Admin ad;
@@ -50,6 +53,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private MenuUser mu;
     private InputBarang ib;
     private Editbarang eb;
+    private DetailNota dn;
     
     public Controller(Aplikasi Model){
         this.model = Model;
@@ -62,6 +66,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mu = new MenuUser();
         ib = new InputBarang();
         eb = new Editbarang();
+        dn = new DetailNota();
         
         L.addListener(this);
         iu.addListener(this);
@@ -72,7 +77,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mu.addListener(this);
         mu.addAdapter(this);
         eb.addListener(this);
-        
+        dn.addListener(this);
         
         
         mainPanel = view.getMainPanel();
@@ -83,6 +88,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(mu,"4");
         mainPanel.add(ib,"5");
         mainPanel.add(eb,"6");
+        mainPanel.add(dn,"7");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -93,13 +99,13 @@ public class Controller extends MouseAdapter implements ActionListener{
     @Override
     public void mousePressed(MouseEvent e){
         Object source = e.getSource();
-        if(source.equals(mu.getTBarang())&& mu.getBarang()>=0 && Integer.parseInt(mu.getBarang2())== 1001){
+        if(source.equals(mu.getTBarang())&& mu.getBarang()>=0 && Integer.parseInt(mu.getBarang2())!= 1001){
             tmpBarang = model.cariBarang(Integer.parseInt(mu.getBarang2()));
         }else if (source.equals(mu.getTBarang()) && mu.getBarang()>=0){
             tmpBarang = model.cariBarang2(mu.getBarang());  
         }else
             tmpBarang = null;
-        if(source.equals(ad.getTBarang())&& ad.getBarang()>=0 && Integer.parseInt(ad.getBarang2())== 1001){
+        if(source.equals(ad.getTBarang())&& ad.getBarang()>=0 && Integer.parseInt(ad.getBarang2())!= 1001){
             tmpBarang2 = model.cariBarang(Integer.parseInt(ad.getBarang2()));
         }else if (source.equals(ad.getTBarang()) && ad.getBarang()>=0){
             tmpBarang2 = model.cariBarang2(ad.getBarang());
@@ -111,6 +117,13 @@ public class Controller extends MouseAdapter implements ActionListener{
             tmpUser = model.cariUser3(ad.getUser());
         }else{
             tmpUser = null;
+        }
+        if(source.equals(ad.getTNota()) && ad.getNota()>=0 ){
+            idNota = ad.getNota2();
+            idUser = ad.getNota3();
+        }else{
+            idNota = null;
+            idUser = null;
         }
         
     }
@@ -183,7 +196,20 @@ public class Controller extends MouseAdapter implements ActionListener{
                 }else if (ad.getTanggal()!=null && ad.getlId().equals("")){
                     ad.setListLog(model.getListLog(ad.getTanggal(),0));
                }else
-                   JOptionPane.showMessageDialog(null, "PILIH SALAH SATU METODE PENCARIAN", "Peringatan", JOptionPane.ERROR_MESSAGE);   
+                   JOptionPane.showMessageDialog(null, "PILIH SALAH SATU METODE PENCARIAN", "Peringatan", JOptionPane.ERROR_MESSAGE);
+            }else if(source.equals(ad.getNCari())){
+                if(ad.getNotaTanggal()==null&&ad.getNId().equals("")){
+                   JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if (ad.getNotaTanggal()==null && model.getListNota(null, Long.parseLong(ad.getNId()),ad.getNKet())==null){
+                   JOptionPane.showMessageDialog(null, "Data Dengan ID User "+ad.getNId()+" Tidak ditemukan\nCoba Ubah Transaksi", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if (ad.getNotaTanggal()==null && !ad.getNId().equals("")){
+                   ad.setListNota(model.getListNota(null,Long.parseLong(ad.getNId()),ad.getNKet()));
+                }else if(model.getListNota(ad.getNotaTanggal(), 0,ad.getNKet())==null){
+                   JOptionPane.showMessageDialog(null, "Data Dengan Tanggal "+ad.getTanggal()+" Tidak ditemukan", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else if (ad.getNotaTanggal()!=null && ad.getNId().equals("")){
+                    ad.setListNota(model.getListNota(ad.getNotaTanggal(),0,ad.getNKet()));
+               }else
+                   JOptionPane.showMessageDialog(null, "PILIH SALAH SATU METODE PENCARIAN", "Peringatan", JOptionPane.ERROR_MESSAGE);
             }else if(source.equals(ad.getBtambah())){
                 currentView = "5";
                 ib.refresh();
@@ -227,6 +253,17 @@ public class Controller extends MouseAdapter implements ActionListener{
                     eb.setEmasa(Integer.toString(tmpBarang2.getMasapakai()));
                     eb.setEtype(tmpBarang2.getType());
                     view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(ad.getNDetail())){
+                if(idNota==null){
+                   JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Ubah", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    model.loadTransaksi(idNota);
+                    currentView="7";
+                    dn.setUser(idUser);
+                    dn.setSubtotal(model.getTotalTransaksi2());
+                    dn.setListTransaksi(model.getListTransaksi2());
+                    view.getCardLayout().show(mainPanel, currentView);
+                }
             }
         }else if (currentView.equals("2")){
             String s = "";
@@ -390,6 +427,15 @@ public class Controller extends MouseAdapter implements ActionListener{
                     eb.refresh();
                     tmpBarang = null;
             }
+        }else if(currentView.equals("7")){
+            if(source.equals(dn.getBtnKembali())){
+                currentView="1";
+                ad.setListUser(model.getListOutUser());
+                ad.setListBarang(model.getListOutBarang());
+                tmpUser2 = new User(999999999);
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+                
         }
     }
     

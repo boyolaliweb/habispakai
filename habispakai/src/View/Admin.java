@@ -68,6 +68,7 @@ public class Admin extends javax.swing.JPanel {
         nIdnota = new javax.swing.JTextField();
         nCari = new javax.swing.JButton();
         nDetail = new javax.swing.JButton();
+        nket = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         lId = new javax.swing.JTextField();
@@ -295,27 +296,33 @@ public class Admin extends javax.swing.JPanel {
 
         nDetail.setText("Detail");
 
+        nket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masuk", "Keluar" }));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nDetail)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nIdnota, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nCari))
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nDetail)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(nket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(nTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(nIdnota, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nCari)
+                        .addGap(104, 104, 104))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,11 +330,13 @@ public class Admin extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(nCari)
                         .addComponent(nIdnota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9))
-                    .addComponent(nTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nTanggal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -473,6 +482,7 @@ public class Admin extends javax.swing.JPanel {
     private javax.swing.JButton nDetail;
     private javax.swing.JTextField nIdnota;
     private com.toedter.calendar.JDateChooser nTanggal;
+    private javax.swing.JComboBox<String> nket;
     private javax.swing.JTable tBarang;
     private javax.swing.JTable tLog;
     private javax.swing.JTable tNota;
@@ -500,7 +510,7 @@ public class Admin extends javax.swing.JPanel {
         return tUser.getSelectedRow();
     }
     public String getUser2(){
-        return tUser.getValueAt(0,0).toString();
+        return tUser.getValueAt(tUser.getSelectedRow(),0).toString();
     }
     public String getCari(){
         return cari.getText();
@@ -572,7 +582,7 @@ public class Admin extends javax.swing.JPanel {
         return tBarang.getSelectedRow();
     }
     public String getBarang2(){
-        return tBarang.getValueAt(0,0).toString();
+        return tBarang.getValueAt(tBarang.getSelectedRow(),0).toString();
     }
     public void setListBarang(String[][] list){
         String[] judul = {"Id","Nama","Merk","Type/Seri","Satuan"};
@@ -588,7 +598,51 @@ public class Admin extends javax.swing.JPanel {
         tBarang.setModel(tableModel);
         tBarang.getColumnModel().getColumn(0).setPreferredWidth(20);
     }
-    
+    //--------------------------Nota---------------------//
+    public java.util.Date getNotaTanggal(){
+        return nTanggal.getDate();
+    }
+    public Object getNCari(){
+        return nCari;
+    }
+    public Object getNDetail(){
+        return nDetail;
+    }
+    public String getNId(){
+        return nIdnota.getText();
+    }
+    public String getNKet(){
+        if (nket.getSelectedIndex()== 0){
+            return "+";
+        }
+        return "-";
+    }
+    public void setListNota(String[][] list){
+        String[] judul = {"Id","Total_Barang","Total_Harga","Waktu","User_id"};
+        String[][] isi = new String[list.length][5];
+        for (int i = 0; i < list.length; i++){
+            isi[i][0] = list[i][0];
+            isi[i][1] = list[i][1];
+            isi[i][2] = list[i][2];
+            isi[i][3] = list[i][3];
+            isi[i][4] = list[i][4];
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
+        tNota.setModel(tableModel);
+        tNota.getColumnModel().getColumn(0).setPreferredWidth(20);
+    }
+    public Object getTNota(){
+       return tNota;
+   }
+   public int getNota(){
+        return tNota.getSelectedRow();
+    }
+    public String getNota2(){
+        return tNota.getValueAt(tNota.getSelectedRow(),0).toString();
+    }
+    public String getNota3(){
+        return tNota.getValueAt(tNota.getSelectedRow(),4).toString();
+    }
     //---------------------------TOOL---------------------//
     public Object Lopress(){
         return LO;
@@ -605,11 +659,14 @@ public class Admin extends javax.swing.JPanel {
         bTambah.addActionListener(e);
         bEdit.addActionListener(e);
         Bdetail.addActionListener(e);
+        nCari.addActionListener(e);
+        nDetail.addActionListener(e);
     }
     
     public void addAdapter(MouseAdapter e){
         tUser.addMouseListener(e);
         tBarang.addMouseListener(e);
+        tNota.addMouseListener(e);
     }
     public void refresh(){
         bCariNama.setText("");

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Barang;
+import model.Transaksi;
 import model.User;
 
 /**
@@ -262,6 +263,64 @@ public class Database {
         }
         return out;
     }
+    public String[][] readNota(java.util.Date tgl,String i){
+        int n = 0;
+        long x = makeidNota();
+        String out[][] = new String[(int) x][5];
+        String s = "select id, total_barang, total_harga, waktu_trx, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl)) && rs.getString("total_barang").substring(0, 1).equals(i)){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
+    }
+    public boolean cekidNota(long id, String i){
+        String s = "select id, total_barang, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (rs.getLong("id")==id && rs.getString("total_barang").substring(0, 1).equals(i))
+                    return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    public String[][] readNota2(long id, String i){
+        int n = 0;
+        Long[] z = null;
+        long x = makeidNota();
+        String out[][] = new String[toIntExact(x)][5];
+        String s = "select id, total_barang, total_harga, waktu_trx, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (rs.getLong("id")==id && rs.getString("total_barang").substring(0, 1).equals(i)){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return out;
+    }
     public boolean cekidLog(long id){
         String s = "select id, id_user, even, user_id, time from log";
         ResultSet rs = getData(s);
@@ -313,6 +372,7 @@ public class Database {
         
         return d;
     }
+    
     public int makeidNota() {
         String s = "select id from nota";
         ResultSet rs = getData(s);
@@ -389,6 +449,27 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+    }
+    public ArrayList<Transaksi> readTransaksi(String id){
+        ArrayList<Transaksi> dTransaksi = new ArrayList();
+        String s = "select * from transaksi where id_nota = '"+id+"';";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+               
+                    String v = "select nama, merk from barang where id = '"+rs.getString("barang_id")+"';";
+                    ResultSet rv = getData(v);
+                    rv.next();
+                    Transaksi t;
+                    t = new Transaksi(rs.getLong("barang_id"),rv.getString("nama"),rv.getString("merk"),Integer.parseInt(rs.getString("qty").substring(1)),rs.getString("harga"));
+                    dTransaksi.add(t);
+                
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
+        }
+        return dTransaksi;
     }
     public void setStok(int qty,long barang_id){
         String v = "update stok set stok = '"+(cekStok(barang_id)+qty)+"' where id_barang = '"+barang_id+"';";

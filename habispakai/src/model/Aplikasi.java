@@ -19,6 +19,7 @@ public class Aplikasi {
     ArrayList<User> tUser;
     ArrayList<Barang> tBarang;
     ArrayList<Transaksi> tTransaksi;
+    ArrayList<Transaksi> tTransaksi2;
     Database d;
 
     public Aplikasi() {
@@ -100,7 +101,38 @@ public class Aplikasi {
         }
         return null;
     }
-    
+    public String[][] getListNota(java.util.Date tgl,long id,String i){
+        if (tgl!=null){
+            return d.readNota(tgl,i);
+        }
+        else if (d.cekidNota(id,i) && id!=0){
+            return d.readNota2(id, i);
+        }
+        return null;
+    }
+    public void loadTransaksi(String id){
+        tTransaksi2 = new ArrayList();
+        tTransaksi2 = d.readTransaksi(id);
+    }
+    public String[][] getListTransaksi2(){
+        String out[][] = new String[tTransaksi2.size()][6];
+        for (int i = 0;i < tTransaksi2.size();i++){
+            out[i][0] = Long.toString(tTransaksi2.get(i).getIdBarang());
+            out[i][1] = tTransaksi2.get(i).getNamaBarang();
+            out[i][2] = tTransaksi2.get(i).getMerk();
+            out[i][3] = Integer.toString(tTransaksi2.get(i).getQty());
+            out[i][4] = tTransaksi2.get(i).getHarga();
+            out[i][5] = tTransaksi2.get(i).getTotalHarga();
+        }
+        return out;
+    }
+    public String getTotalTransaksi2(){
+        long n = 0;
+        for (int i = 0;i < tTransaksi2.size();i++){
+            n = n + Long.parseLong(tTransaksi2.get(i).getTotalHarga());
+        }
+        return Long.toString(n);
+    }
     //-----------------------------User----------------------------//
     
     public String insertBarang(String nama, String merk, String type, String satuan,int masapakai,String Ket,String user_id){
