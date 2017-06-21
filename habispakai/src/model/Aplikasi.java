@@ -141,10 +141,6 @@ public class Aplikasi {
         }
         int n = 0;
         n=d.makeidBarang();
-        if (n>1000){
-            n++;
-        }else
-            n = 1001;
         Barang b = new Barang(n, nama, merk, type, satuan, masapakai, Ket, 0);
         d.insertBarang(n, nama, merk, type, satuan, masapakai, Ket, user_id);
         this.tBarang.add(b);

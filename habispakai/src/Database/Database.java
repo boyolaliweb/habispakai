@@ -99,7 +99,7 @@ public class Database {
     public int makeidBarang() {
         String s = "select id from barang";
         ResultSet rs = getData(s);
-        int d = 0;
+        int d = 1;
         try {
                 while(rs.next()){
                         d = rs.getInt("id");
