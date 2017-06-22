@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2017 at 08:48 AM
+-- Generation Time: Jun 22, 2017 at 03:54 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -33,8 +33,6 @@ CREATE TABLE `barang` (
   `type/seri` tinytext NOT NULL,
   `satuan` varchar(15) NOT NULL,
   `masa_pakai` char(2) NOT NULL,
-  `stok` mediumint(9) NOT NULL,
-  `harga` tinytext NOT NULL,
   `ket` tinytext NOT NULL,
   `del` tinyint(1) NOT NULL,
   `del_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -63,16 +61,44 @@ CREATE TABLE `log` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `nota`
+--
+
+CREATE TABLE `nota` (
+  `id` bigint(20) NOT NULL,
+  `total_barang` tinytext NOT NULL,
+  `total_harga` tinytext NOT NULL,
+  `waktu_trx` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_id` tinytext NOT NULL,
+  `del` tinyint(1) NOT NULL,
+  `del_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `mod_by` tinytext NOT NULL,
+  `mod_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stok`
+--
+
+CREATE TABLE `stok` (
+  `id_barang` bigint(20) NOT NULL,
+  `stok` mediumint(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
   `id` bigint(20) NOT NULL,
-  `waktu_trx` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `id_nota` bigint(20) NOT NULL,
   `barang_id` smallint(6) NOT NULL,
   `qty` varchar(4) NOT NULL,
   `harga` varchar(9) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
   `del` tinyint(1) NOT NULL,
   `del_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `mod_by` varchar(10) NOT NULL,
@@ -110,6 +136,24 @@ ALTER TABLE `barang`
 -- Indexes for table `log`
 --
 ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `nota`
+--
+ALTER TABLE `nota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stok`
+--
+ALTER TABLE `stok`
+  ADD PRIMARY KEY (`id_barang`);
+
+--
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
