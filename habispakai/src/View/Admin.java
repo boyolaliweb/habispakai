@@ -351,7 +351,7 @@ public class Admin extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Nota", jPanel6);
 
-        jLabel5.setText("User ID:");
+        jLabel5.setText("ID:");
 
         jLabel6.setText("Tanggal :");
 
@@ -397,24 +397,25 @@ public class Admin extends javax.swing.JPanel {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(lCari)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lCari)
-                    .addComponent(lId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
                     .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lKet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lCari)
+                        .addComponent(lId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(lKet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(82, 82, 82))
@@ -538,13 +539,14 @@ public class Admin extends javax.swing.JPanel {
     
     //--------------------------Log-----------------------//
     public void setListLog(String[][] list){
-        String[] judul = {"ID","Event","User_id","Time"};
-        String[][] isi = new String[list.length][4];
+        String[] judul = {"Id Log","Id","Event","User_id","Time"};
+        String[][] isi = new String[list.length][5];
         for (int i = 0; i < list.length; i++){
             isi[i][0] = list[i][0];
             isi[i][1] = list[i][1];
             isi[i][2] = list[i][2];
             isi[i][3] = list[i][3];
+            isi[i][4] = list[i][4];
         }
         DefaultTableModel tableModel = new DefaultTableModel(isi,judul);
         tLog.setModel(tableModel);
@@ -562,6 +564,9 @@ public class Admin extends javax.swing.JPanel {
     
     public Object tLog(){
         return tLog;
+    }
+    public int lKet(){
+        return lKet.getSelectedIndex();
     }
     //-------------------------Barang--------------------//
     public String getBnama(){

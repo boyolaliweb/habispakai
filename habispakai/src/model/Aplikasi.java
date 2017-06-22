@@ -92,12 +92,12 @@ public class Aplikasi {
     public void editUser(User u, String user_id){
         d.editUser(u, user_id);
     }
-    public String[][] getListLog(java.util.Date tgl,long id){
+    public String[][] getListLog(java.util.Date tgl,long id,int i){
         if (tgl!=null){
-            return d.readLog(tgl);
+            return d.readLog(tgl,i);
         }
-        else if (d.cekidLog(id) && id!=0){
-            return d.readLog2(id);
+        else if (d.cekidLog(id,i) && id!=0){
+            return d.readLog2(id,i);
         }
         return null;
     }
@@ -140,7 +140,7 @@ public class Aplikasi {
             user_id = "admin";
         }
         int n = 0;
-        n=d.makeidBarang();
+        n=d.makeidBarang()+1;
         Barang b = new Barang(n, nama, merk, type, satuan, masapakai, Ket, 0);
         d.insertBarang(n, nama, merk, type, satuan, masapakai, Ket, user_id);
         this.tBarang.add(b);
