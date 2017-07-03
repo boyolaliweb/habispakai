@@ -185,7 +185,6 @@ public class Controller extends MouseAdapter implements ActionListener{
                    ad.setListUser(model.getListOutUser2(tmpUser));
                }
             }else if(source.equals(ad.getlcari())){
-                System.out.println(ad.getTanggal());
                 if(ad.getTanggal()==null&&ad.getlId().equals("")){
                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else if (ad.getTanggal()==null && model.getListLog(null, Long.parseLong(ad.getlId()),ad.lKet())==null){
