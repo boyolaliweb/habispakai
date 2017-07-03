@@ -253,6 +253,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     eb.setEket(tmpBarang2.getKet());
                     eb.setEmasa(Integer.toString(tmpBarang2.getMasapakai()));
                     eb.setEtype(tmpBarang2.getType());
+                    tmpBarang = tmpBarang2;
                     view.getCardLayout().show(mainPanel, currentView);
             }else if(source.equals(ad.getNDetail())){
                 if(idNota==null){

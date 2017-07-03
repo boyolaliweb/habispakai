@@ -244,7 +244,7 @@ public class Database {
         int n = 0;
         long x = makeidLog();
         String out[][] = new String[(int) x][5];
-        String s = "select id_user, even, user_id, time from log";
+        String s = "select id, id_user, even, user_id, time from log";
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
@@ -343,7 +343,7 @@ public class Database {
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
-                if (rs.getLong("id_user")== id && Integer.parseInt(rs.getString("even").substring(rs.getString("even").length() - 1, rs.getString("even").length())) == i){
+                if ((rs.getLong("id_user")== id && Integer.parseInt(rs.getString("even").substring(rs.getString("even").length() - 1, rs.getString("even").length())) == i ) || rs.getString("user_id").equals(Long.toString(id))){
                     out[n][0] = Long.toString(rs.getLong("id"));
                     out[n][1] = Long.toString(rs.getLong("id_user"));
                     out[n][2] = rs.getString("even");
