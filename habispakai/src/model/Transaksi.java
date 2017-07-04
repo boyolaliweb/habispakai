@@ -9,6 +9,7 @@ package model;
  *
  * @author The Keong's
  */
+//taps
 public class Transaksi {
     private long idBarang;
     private String namaBarang;
