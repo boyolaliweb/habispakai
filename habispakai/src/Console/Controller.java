@@ -150,7 +150,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     } else
                          JOptionPane.showMessageDialog(null, "User tidak ada atau username dan pass salah", "Peringatan", JOptionPane.ERROR_MESSAGE);
             }
-        } else if (currentView.equals("1")){
+        } else if (currentView.equals("1")){ 
             if(source.equals(ad.getUtambah())){
                 currentView="2";
                 view.getCardLayout().show(mainPanel, currentView);
@@ -399,6 +399,7 @@ public class Controller extends MouseAdapter implements ActionListener{
             if(source.equals(ib.getBack())){
                 if (tmpUser2.getId()==999999999){
                     currentView="1";
+                    ad.setListBarang(model.getListOutBarang());
                     view.getCardLayout().show(mainPanel, currentView);
                 }else{
                     currentView="4";
