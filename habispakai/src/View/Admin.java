@@ -5,12 +5,21 @@
  */
 package View;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -46,6 +55,7 @@ public class Admin extends javax.swing.JPanel {
         cari = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Ucari = new javax.swing.JButton();
+        Cetak = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         bTambah = new javax.swing.JButton();
@@ -59,6 +69,7 @@ public class Admin extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         bCari = new javax.swing.JButton();
         Bdetail = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tNota = new javax.swing.JTable();
@@ -110,6 +121,13 @@ public class Admin extends javax.swing.JPanel {
 
         Ucari.setText("Cari");
 
+        Cetak.setText("Cetak");
+        Cetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CetakActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -125,6 +143,8 @@ public class Admin extends javax.swing.JPanel {
                         .addComponent(Ucari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(Cetak)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(Uhapus)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(Uedit)
@@ -151,7 +171,8 @@ public class Admin extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Uhapus)
                     .addComponent(Uedit)
-                    .addComponent(Utambah))
+                    .addComponent(Utambah)
+                    .addComponent(Cetak))
                 .addGap(57, 57, 57))
         );
 
@@ -204,6 +225,13 @@ public class Admin extends javax.swing.JPanel {
 
         Bdetail.setText("Detail");
 
+        jButton1.setText("Cetak");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -229,6 +257,8 @@ public class Admin extends javax.swing.JPanel {
                             .addComponent(jButton5)
                             .addGap(38, 38, 38)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Bdetail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bHapus)
@@ -256,7 +286,8 @@ public class Admin extends javax.swing.JPanel {
                     .addComponent(bTambah)
                     .addComponent(bEdit)
                     .addComponent(bHapus)
-                    .addComponent(Bdetail))
+                    .addComponent(Bdetail)
+                    .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -463,9 +494,49 @@ public class Admin extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CetakActionPerformed
+        try {
+            MysqlDataSource server = new MysqlDataSource();
+            server.setServerName("localhost");
+            server.setUser("root");
+            server.setPassword("");
+            server.setPortNumber(3306);
+            server.setDatabaseName("master_table");
+            Connection koneksi = server.getConnection();
+            JasperViewer jp = new JasperViewer(JasperFillManager.fillReport(JasperCompileManager.compileReport("./laporan/data_user.jrxml"),null,koneksi),false);
+            jp.setTitle("DATA USER");
+            jp.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_CetakActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            MysqlDataSource server = new MysqlDataSource();
+            server.setServerName("localhost");
+            server.setUser("root");
+            server.setPassword("");
+            server.setPortNumber(3306);
+            server.setDatabaseName("master_table");
+            Connection koneksi = server.getConnection();
+            JasperViewer jp = new JasperViewer(JasperFillManager.fillReport(JasperCompileManager.compileReport("./laporan/data_barang.jrxml"),null,koneksi),false);
+            jp.setTitle("DATA BARANG");
+            jp.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bdetail;
+    private javax.swing.JButton Cetak;
     private javax.swing.JButton LO;
     private javax.swing.JButton Ucari;
     private javax.swing.JButton Uedit;
@@ -478,6 +549,7 @@ public class Admin extends javax.swing.JPanel {
     private javax.swing.JButton bTambah;
     private javax.swing.JTextField cari;
     private com.toedter.calendar.JDateChooser date;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
