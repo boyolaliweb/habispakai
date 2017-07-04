@@ -63,6 +63,7 @@ public class TransMasuk extends javax.swing.JPanel {
 
         jTextField5.setText("jTextField5");
 
+        jLabel6.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel6.setText("TRANSAKSI MASUK");
 
         jButton1.setText("Simpan");
@@ -151,7 +152,7 @@ public class TransMasuk extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
