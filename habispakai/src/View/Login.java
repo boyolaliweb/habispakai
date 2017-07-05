@@ -30,8 +30,6 @@ public class Login extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         Masuk = new javax.swing.JButton();
         idLogin = new javax.swing.JTextField();
         passLogin = new javax.swing.JPasswordField();
@@ -49,28 +47,20 @@ public class Login extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(200, 60, 245, 22);
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 11)); // NOI18N
-        jLabel2.setText("ID Pegawai ");
-        add(jLabel2);
-        jLabel2.setBounds(210, 260, 70, 20);
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 11)); // NOI18N
-        jLabel3.setText("Password");
-        add(jLabel3);
-        jLabel3.setBounds(210, 300, 60, 20);
-
         Masuk.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 11)); // NOI18N
-        Masuk.setText("Login");
+        Masuk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/7451 [Converted]1.png"))); // NOI18N
         Masuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MasukActionPerformed(evt);
             }
         });
         add(Masuk);
-        Masuk.setBounds(360, 340, 80, 23);
+        Masuk.setBounds(220, 340, 200, 30);
 
+        idLogin.setBackground(new java.awt.Color(237, 237, 237));
+        idLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        idLogin.setText("User ID");
+        idLogin.setBorder(null);
         idLogin.setCaretColor(new java.awt.Color(255, 255, 255));
         idLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,15 +68,18 @@ public class Login extends javax.swing.JPanel {
             }
         });
         add(idLogin);
-        idLogin.setBounds(280, 260, 160, 20);
+        idLogin.setBounds(240, 240, 200, 30);
 
+        passLogin.setBackground(new java.awt.Color(237, 237, 237));
+        passLogin.setText("Password");
+        passLogin.setBorder(null);
         passLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passLoginActionPerformed(evt);
             }
         });
         add(passLogin);
-        passLogin.setBounds(280, 300, 160, 20);
+        passLogin.setBounds(240, 290, 200, 30);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -96,7 +89,7 @@ public class Login extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(180, 30, 280, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/7451 [Converted].png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/login.png"))); // NOI18N
         add(jLabel6);
         jLabel6.setBounds(180, 90, 280, 320);
     }// </editor-fold>//GEN-END:initComponents
@@ -118,8 +111,6 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JButton Masuk;
     private javax.swing.JTextField idLogin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField passLogin;
