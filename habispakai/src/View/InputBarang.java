@@ -69,7 +69,7 @@ public class InputBarang extends javax.swing.JPanel {
             }
         });
 
-        setBackground(new java.awt.Color(23, 171, 99));
+        setBackground(new java.awt.Color(102, 153, 255));
 
         Tambah.setText("Tambah");
         Tambah.addActionListener(new java.awt.event.ActionListener() {

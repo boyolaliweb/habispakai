@@ -43,7 +43,7 @@ public class TransMasuk extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(23, 171, 99));
+        setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel1.setText("ID Transaksi         :");
 

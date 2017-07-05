@@ -37,7 +37,7 @@ public class InputUser extends javax.swing.JPanel {
         buat = new javax.swing.JButton();
         back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(23, 171, 99));
+        setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel1.setText("Tambah User");
 

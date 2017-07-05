@@ -39,7 +39,7 @@ public class EditUser extends javax.swing.JPanel {
         eSubmit = new javax.swing.JButton();
         Eback = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(23, 171, 99));
+        setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel1.setText("EDIT DATA USER");

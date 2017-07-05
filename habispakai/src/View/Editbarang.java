@@ -49,6 +49,8 @@ public class Editbarang extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         Esatuan = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(102, 153, 255));
+
         jLabel1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel1.setText("EDIT DATA BARANG");
 
