@@ -97,15 +97,19 @@ public class Admin extends javax.swing.JPanel {
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(102, 153, 255));
 
+        Utambah.setBackground(new java.awt.Color(255, 223, 19));
         Utambah.setText("Tambah");
 
+        Uedit.setBackground(new java.awt.Color(255, 223, 19));
         Uedit.setText("Edit");
 
+        Uhapus.setBackground(new java.awt.Color(255, 223, 19));
         Uhapus.setText("Hapus");
 
         jLabel3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("DAFTAR USER");
 
         tUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -129,10 +133,15 @@ public class Admin extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tUser);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("User ID");
 
+        Ucari.setBackground(new java.awt.Color(255, 223, 19));
+        Ucari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Google Web Search_15px.png"))); // NOI18N
         Ucari.setText("Cari");
 
+        Cetak.setBackground(new java.awt.Color(255, 223, 19));
+        Cetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Print_52px.png"))); // NOI18N
         Cetak.setText("Cetak");
         Cetak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,28 +157,28 @@ public class Admin extends javax.swing.JPanel {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 28, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(262, 262, 262)
-                                .addComponent(Cetak)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(329, 329, 329)
                                 .addComponent(Uhapus)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Uedit)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Utambah))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Ucari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(Ucari)
+                                .addGap(230, 230, 230)
+                                .addComponent(Cetak)))
+                        .addGap(0, 28, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,29 +189,34 @@ public class Admin extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Ucari)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(Cetak))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Uhapus)
                     .addComponent(Uedit)
-                    .addComponent(Utambah)
-                    .addComponent(Cetak))
+                    .addComponent(Utambah))
                 .addGap(57, 57, 57))
         );
 
         jTabbedPane1.addTab("User", jPanel4);
 
-        jPanel2.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel2.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
+        bTambah.setBackground(new java.awt.Color(255, 223, 19));
         bTambah.setText("Tambah");
 
+        bEdit.setBackground(new java.awt.Color(255, 223, 19));
         bEdit.setText("Edit");
 
+        bHapus.setBackground(new java.awt.Color(255, 223, 19));
         bHapus.setText("Hapus");
 
         jLabel1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DAFTAR INVENTARIS");
 
         tBarang.setModel(new javax.swing.table.DefaultTableModel(
@@ -218,12 +232,18 @@ public class Admin extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tBarang);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nama barang");
 
+        bCari.setBackground(new java.awt.Color(255, 223, 19));
+        bCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Google Web Search_15px.png"))); // NOI18N
         bCari.setText("Cari");
 
+        Bdetail.setBackground(new java.awt.Color(255, 223, 19));
         Bdetail.setText("Detail");
 
+        jButton1.setBackground(new java.awt.Color(255, 223, 19));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Print_52px.png"))); // NOI18N
         jButton1.setText("Cetak");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,11 +258,18 @@ public class Admin extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(18, 18, 18)
+                            .addComponent(bCariNama, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(bCari)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(Bdetail)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(bHapus)
@@ -250,14 +277,7 @@ public class Admin extends javax.swing.JPanel {
                             .addComponent(bEdit)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(bTambah)
-                            .addGap(9, 9, 9)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(bCariNama, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(9, 9, 9))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -269,7 +289,8 @@ public class Admin extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bCariNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bCari)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -277,14 +298,13 @@ public class Admin extends javax.swing.JPanel {
                     .addComponent(bTambah)
                     .addComponent(bEdit)
                     .addComponent(bHapus)
-                    .addComponent(Bdetail)
-                    .addComponent(jButton1))
+                    .addComponent(Bdetail))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Inventaris", jPanel2);
 
-        jPanel6.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel6.setBackground(new java.awt.Color(102, 153, 255));
 
         tNota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -299,19 +319,26 @@ public class Admin extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(tNota);
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tanggal :");
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ID Nota :");
 
+        nCari.setBackground(new java.awt.Color(255, 223, 19));
+        nCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Google Web Search_15px.png"))); // NOI18N
         nCari.setText("Cari");
 
+        nDetail.setBackground(new java.awt.Color(255, 223, 19));
         nDetail.setText("Detail");
 
         nket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masuk", "Keluar" }));
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Transaksi     :");
 
         jLabel12.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("DAFTAR NOTA");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -369,15 +396,24 @@ public class Admin extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Nota", jPanel6);
 
-        jPanel5.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel5.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ID:");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tanggal :");
 
+        lCari.setBackground(new java.awt.Color(255, 223, 19));
+        lCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Google Web Search_15px.png"))); // NOI18N
         lCari.setText("Cari");
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("LOG AKTIFITAS");
 
         tLog.setModel(new javax.swing.table.DefaultTableModel(
@@ -395,6 +431,8 @@ public class Admin extends javax.swing.JPanel {
 
         lKet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Barang", "Nota", "Transaksi" }));
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cari Berdasarkan :");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -448,6 +486,8 @@ public class Admin extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Log", jPanel5);
 
+        LO.setBackground(new java.awt.Color(243, 101, 100));
+        LO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Exit_15px.png"))); // NOI18N
         LO.setText("LogOut");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -464,7 +504,7 @@ public class Admin extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(LO)
                 .addContainerGap())
         );
