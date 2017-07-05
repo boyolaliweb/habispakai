@@ -97,7 +97,7 @@ public class Login extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(180, 30, 280, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Kuliah\\KP Kominfo\\Aset\\7451 [Converted].png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Kuliah\\KP Kominfo\\habispakai\\habispakai\\src\\Aset\\7451 [Converted].png")); // NOI18N
         add(jLabel6);
         jLabel6.setBounds(180, 90, 280, 320);
     }// </editor-fold>//GEN-END:initComponents
