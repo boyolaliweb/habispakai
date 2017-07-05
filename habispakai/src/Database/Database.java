@@ -343,13 +343,24 @@ public class Database {
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
-                if ((rs.getLong("id_user")== id && Integer.parseInt(rs.getString("even").substring(rs.getString("even").length() - 1, rs.getString("even").length())) == i ) || rs.getString("user_id").equals(Long.toString(id))){
-                    out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = Long.toString(rs.getLong("id_user"));
-                    out[n][2] = rs.getString("even");
-                    out[n][3] = rs.getString("user_id");
-                    out[n][4] = rs.getString("time");
-                    n++;
+                if (i == 0){
+                    if ((rs.getLong("id_user")== id && Integer.parseInt(rs.getString("even").substring(rs.getString("even").length() - 1, rs.getString("even").length())) == i ) || rs.getString("user_id").equals(Long.toString(id))){
+                        out[n][0] = Long.toString(rs.getLong("id"));
+                        out[n][1] = Long.toString(rs.getLong("id_user"));
+                        out[n][2] = rs.getString("even");
+                        out[n][3] = rs.getString("user_id");
+                        out[n][4] = rs.getString("time");
+                        n++;
+                    }
+                } else {
+                    if ((rs.getLong("id_user")== id && Integer.parseInt(rs.getString("even").substring(rs.getString("even").length() - 1, rs.getString("even").length())) == i )){
+                        out[n][0] = Long.toString(rs.getLong("id"));
+                        out[n][1] = Long.toString(rs.getLong("id_user"));
+                        out[n][2] = rs.getString("even");
+                        out[n][3] = rs.getString("user_id");
+                        out[n][4] = rs.getString("time");
+                        n++;
+                    }
                 }
                 
             }
