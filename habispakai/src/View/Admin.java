@@ -94,7 +94,9 @@ public class Admin extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(68, 68, 68));
 
-        jPanel4.setBackground(new java.awt.Color(23, 171, 99));
+        jTabbedPane1.setBackground(new java.awt.Color(68, 68, 68));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         Utambah.setText("Tambah");
 
