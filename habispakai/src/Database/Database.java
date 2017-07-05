@@ -34,6 +34,19 @@ public class Database {
     private Connection con = null;
     private ResultSet rs = null;
     
+    public void Database2() {
+        try {
+            Class.forName("org.gjt.mm.mysql.Driver");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://db4free.net:3307/master_table", "habispakai", "qwer1234");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     public Database() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
@@ -46,7 +59,7 @@ public class Database {
             System.out.println(e);
         }
     }
-
+    
     public ResultSet getData(String SQLString) {
         try {
             stmt = con.createStatement();
