@@ -82,11 +82,10 @@ public class MenuUser extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(68, 68, 68));
 
-        Barang.setBackground(new java.awt.Color(255, 102, 102));
-        Barang.setForeground(new java.awt.Color(255, 255, 255));
+        Barang.setBackground(new java.awt.Color(255, 255, 255));
         Barang.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
-        jPanel2.setBackground(new java.awt.Color(0, 171, 82));
+        jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
         Add.setBackground(new java.awt.Color(255, 223, 19));
         Add.setText("Tambah");
@@ -184,12 +183,15 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Barang", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nama Barang      :");
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Jumlah Barang   :");
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Harga Barang     :");
 
         tkTabel.setModel(new javax.swing.table.DefaultTableModel(
@@ -205,10 +207,13 @@ public class MenuUser extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(tkTabel);
 
+        tkTambah.setBackground(new java.awt.Color(255, 223, 19));
         tkTambah.setText("Tambah");
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sub Total    :");
 
+        tkSimpan.setBackground(new java.awt.Color(255, 223, 19));
         tkSimpan.setText("Simpan");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -270,14 +275,18 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Transaksi Keluar", jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel4.setBackground(new java.awt.Color(102, 153, 255));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nama Barang       :");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Jumlah Barang     :");
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Harga Barang      :");
 
+        tTambah.setBackground(new java.awt.Color(255, 223, 19));
         tTambah.setText("Tambah");
 
         tTransaksi.setModel(new javax.swing.table.DefaultTableModel(
@@ -293,8 +302,10 @@ public class MenuUser extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tTransaksi);
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Sub Total    :");
 
+        tSimpan.setBackground(new java.awt.Color(255, 223, 19));
         tSimpan.setText("Simpan");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -342,12 +353,12 @@ public class MenuUser extends javax.swing.JPanel {
                     .addComponent(jLabel4))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel5)
+                    .addComponent(harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tTambah)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,14 +370,18 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Transaksi", jPanel4);
 
-        jPanel1.setBackground(new java.awt.Color(23, 171, 99));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Password Lama          :");
 
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Password Baru           :");
 
+        pUbah.setBackground(new java.awt.Color(255, 223, 19));
         pUbah.setText("Ubah");
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Confrim Password      :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -374,7 +389,7 @@ public class MenuUser extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(264, Short.MAX_VALUE)
+                .addContainerGap(209, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(pUbah)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -387,7 +402,7 @@ public class MenuUser extends javax.swing.JPanel {
                             .addComponent(PassB)
                             .addComponent(PassL)
                             .addComponent(cPass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(151, 151, 151))
+                .addGap(206, 206, 206))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
