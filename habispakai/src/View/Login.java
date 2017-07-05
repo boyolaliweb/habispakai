@@ -71,7 +71,6 @@ public class Login extends javax.swing.JPanel {
         add(Masuk);
         Masuk.setBounds(360, 340, 80, 23);
 
-        idLogin.setForeground(new java.awt.Color(255, 255, 255));
         idLogin.setCaretColor(new java.awt.Color(255, 255, 255));
         idLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
