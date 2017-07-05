@@ -86,9 +86,9 @@ public class Login extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Apllikasi Inventaris Barang");
+        jLabel4.setText("APLIKASI INVENTARIS BARANG");
         add(jLabel4);
-        jLabel4.setBounds(180, 30, 280, 30);
+        jLabel4.setBounds(160, 30, 320, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/login.png"))); // NOI18N
         add(jLabel6);
