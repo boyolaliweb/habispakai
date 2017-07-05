@@ -58,7 +58,8 @@ public class Controller extends MouseAdapter implements ActionListener{
     public Controller(Aplikasi Model){
         this.model = Model;
         this.view = new panelContainer();
-        
+        view.pack();
+        view.setResizable(false);
         L = new Login();
         ad = new Admin();
         iu = new InputUser();
@@ -90,7 +91,6 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(eb,"6");
         mainPanel.add(dn,"7");
         currentView = "0";
-        
         view.getCardLayout().show(mainPanel, currentView);
         view.setVisible(true);
                                                
