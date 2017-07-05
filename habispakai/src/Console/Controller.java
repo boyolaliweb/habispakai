@@ -60,6 +60,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         this.view = new panelContainer();
         view.pack();
         view.setResizable(false);
+        view.setTitle("Inventaris Barang Diskominfo");
         L = new Login();
         ad = new Admin();
         iu = new InputUser();
