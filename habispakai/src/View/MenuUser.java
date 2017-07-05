@@ -5,9 +5,18 @@
  */
 package View;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -119,6 +128,11 @@ public class MenuUser extends javax.swing.JPanel {
         Print.setBackground(new java.awt.Color(255, 223, 19));
         Print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Print_52px.png"))); // NOI18N
         Print.setText("Cetak");
+        Print.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintActionPerformed(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,9 +156,7 @@ public class MenuUser extends javax.swing.JPanel {
                                 .addComponent(SrcNama, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Src))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)))
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Print))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -451,6 +463,26 @@ public class MenuUser extends javax.swing.JPanel {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
+        // TODO add your handling code here:
+        try {
+            MysqlDataSource server = new MysqlDataSource();
+            server.setServerName("localhost");
+            server.setUser("root");
+            server.setPassword("");
+            server.setPortNumber(3306);
+            server.setDatabaseName("master_table");
+            Connection koneksi = server.getConnection();
+            JasperViewer jp = new JasperViewer(JasperFillManager.fillReport(JasperCompileManager.compileReport("./laporan/data_barang.jrxml"),null,koneksi),false);
+            jp.setTitle("DATA BARANG");
+            jp.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PrintActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
