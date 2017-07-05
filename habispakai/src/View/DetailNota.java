@@ -39,6 +39,8 @@ public class DetailNota extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(23, 171, 99));
+
         btnKembali.setText("Kembali");
 
         jLabel7.setText("USER :");

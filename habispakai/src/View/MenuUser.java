@@ -80,6 +80,10 @@ public class MenuUser extends javax.swing.JPanel {
         cPass = new javax.swing.JPasswordField();
         LogOut = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(68, 68, 68));
+
+        jPanel2.setBackground(new java.awt.Color(23, 171, 99));
+
         Add.setText("Tambah");
 
         Edit.setText("Edit");
@@ -163,6 +167,8 @@ public class MenuUser extends javax.swing.JPanel {
         );
 
         Barang.addTab("Barang", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(23, 171, 99));
 
         jLabel6.setText("Nama Barang      :");
 
@@ -249,6 +255,8 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Transaksi Keluar", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(23, 171, 99));
+
         jLabel3.setText("Nama Barang       :");
 
         jLabel4.setText("Jumlah Barang     :");
@@ -334,6 +342,8 @@ public class MenuUser extends javax.swing.JPanel {
 
         Barang.addTab("Transaksi", jPanel4);
 
+        jPanel1.setBackground(new java.awt.Color(23, 212, 117));
+
         jLabel16.setText("Password Lama          :");
 
         jLabel17.setText("Password Baru           :");
@@ -346,21 +356,20 @@ public class MenuUser extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pUbah)
-                .addGap(70, 70, 70))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel1))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PassB, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(PassL)
-                    .addComponent(cPass))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pUbah)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel1))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PassB, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(PassL)
+                            .addComponent(cPass))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -378,9 +387,9 @@ public class MenuUser extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(pUbah)
-                .addGap(40, 40, 40))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         Barang.addTab("Ubah Password", jPanel1);

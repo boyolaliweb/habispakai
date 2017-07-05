@@ -39,6 +39,8 @@ public class Invent extends javax.swing.JPanel {
         btnPrint = new javax.swing.JButton();
         btnKeluar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(23, 171, 99));
+
         jLabel7.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel7.setText("DAFTAR INVENTARIS");
 
