@@ -487,6 +487,7 @@ public class Admin extends javax.swing.JPanel {
         jTabbedPane1.addTab("Log", jPanel5);
 
         LO.setBackground(new java.awt.Color(243, 101, 100));
+        LO.setForeground(new java.awt.Color(255, 255, 255));
         LO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aset/Exit_15px.png"))); // NOI18N
         LO.setText("LogOut");
 
