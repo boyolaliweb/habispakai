@@ -69,6 +69,7 @@ public class Aplikasi {
     }
     
     public String[][] getListOutUser(){
+        tUser = d.readUser();
         String out[][] = new String[tUser.size()][5];
         for (int i = 0;i < tUser.size();i++){
             if (tUser.get(i).getDel()==0){
@@ -81,6 +82,7 @@ public class Aplikasi {
         return out;
     }
     public String[][] getListOutUser2(User u){
+        tUser = d.readUser();
         String out[][] = new String[1][4];
         out[0][0] = Long.toString(u.getId());
         out[0][1] = u.getNama();
@@ -148,6 +150,7 @@ public class Aplikasi {
         return "ID : "+n+"\nNama : "+nama;
     }
     public String[][] getListOutBarang(){
+        tBarang = d.readBarang();
         String out[][] = new String[tBarang.size()][5];
         for (int i = 0;i < tBarang.size();i++){
             if (tBarang.get(i).getDel()==0){
@@ -161,6 +164,7 @@ public class Aplikasi {
         return out;
     }
     public String[][] getListOutBarang2(Barang u){
+        tBarang = d.readBarang();
         String out[][] = new String[1][5];
         out[0][0] = Integer.toString(u.getId());
         out[0][1] = u.getNama();

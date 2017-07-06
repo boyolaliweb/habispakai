@@ -34,20 +34,21 @@ public class Database {
     private Connection con = null;
     private ResultSet rs = null;
     
-    public void Database2() {
+    public Database() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (Exception e) {
             System.out.println(e);
         }
         try {
-            con = DriverManager.getConnection("jdbc:mysql://db4free.net:3307/master_table", "habispakai", "qwer1234");
+            con = DriverManager.getConnection("jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12183731", "sql12183731", "xDeeKjpRMB");
         } catch (Exception e) {
+            System.out.println("joss");
             System.out.println(e);
         }
     }
     
-    public Database() {
+    /*public Database() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (Exception e) {
@@ -58,7 +59,7 @@ public class Database {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
+    }*/
     
     public ResultSet getData(String SQLString) {
         try {
