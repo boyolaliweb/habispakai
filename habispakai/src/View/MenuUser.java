@@ -696,5 +696,9 @@ public class MenuUser extends javax.swing.JPanel {
        setListTransaksi(setKosong());
        tSubtotal.setText("");
        tkSubtotal.setText("");
+       tkbarang.setText("");
+       tkqty.setText("");
+       tkharga.setText("");
+       setListTkTransaksi(setKosong());
    }
 }
