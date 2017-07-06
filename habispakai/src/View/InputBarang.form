@@ -82,12 +82,16 @@
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="IMasa" alignment="1" max="32767" attributes="0"/>
                                   <Component id="IMerk" alignment="1" pref="287" max="32767" attributes="0"/>
                                   <Component id="IType" max="32767" attributes="0"/>
                                   <Component id="ISatuan" alignment="1" max="32767" attributes="0"/>
                                   <Component id="IKeterangan" max="32767" attributes="0"/>
                                   <Component id="INamabrg" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="IMasa" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -126,6 +130,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IMasa" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -238,6 +243,14 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IMasaActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tahun"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

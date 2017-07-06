@@ -52,6 +52,7 @@ public class InputBarang extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         IKeterangan = new javax.swing.JTextField();
         IMasa = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         jButton1.setText("Buat");
 
@@ -116,6 +117,9 @@ public class InputBarang extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Tahun");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,12 +146,15 @@ public class InputBarang extends javax.swing.JPanel {
                                     .addComponent(jLabel10))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(IMasa, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(IMerk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
                                     .addComponent(IType)
                                     .addComponent(ISatuan, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(IKeterangan)
-                                    .addComponent(INamabrg, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(INamabrg, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(IMasa)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel6)))))
                         .addGap(91, 91, 91))))
         );
         layout.setVerticalGroup(
@@ -174,7 +181,8 @@ public class InputBarang extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,6 +230,7 @@ public class InputBarang extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
