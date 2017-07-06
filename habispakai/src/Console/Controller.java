@@ -222,7 +222,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     String s = "Id      : "+tmpBarang2.getId()+"\nNama   : "+tmpBarang2.getNama()+"\nMerk     : "+
                             tmpBarang2.getWarna()+"\nType/Resi   : "+tmpBarang2.getType()+"\nSatuan       : "+
                             tmpBarang2.getSatuan()+"\nMasa Pakai : "+tmpBarang2.getMasapakai()+
-                            " Bulan\nKeterangan : "+tmpBarang2.getKet();
+                            " Tahun\nKeterangan : "+tmpBarang2.getKet();
                     JOptionPane.showMessageDialog(null, s);
                 }  
             }else if(source.equals(ad.getBhapus())){
@@ -311,7 +311,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     String s = "Id      : "+tmpBarang.getId()+"\nNama   : "+tmpBarang.getNama()+"\nMerk     : "+
                             tmpBarang.getWarna()+"\nType/Resi   : "+tmpBarang.getType()+"\nSatuan       : "+
                             tmpBarang.getSatuan()+"\nMasa Pakai : "+tmpBarang.getMasapakai()+
-                            " Bulan\nKeterangan : "+tmpBarang.getKet();
+                            " Tahun\nKeterangan : "+tmpBarang.getKet();
                     JOptionPane.showMessageDialog(null, s);
                 }  
             }else if(source.equals(mu.getHapus())){
