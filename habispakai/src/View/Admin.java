@@ -514,11 +514,11 @@ public class Admin extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             MysqlDataSource server = new MysqlDataSource();
-            server.setServerName("localhost");
-            server.setUser("root");
-            server.setPassword("");
+            server.setServerName("sql12.freemysqlhosting.net");
+            server.setUser("sql12183731");
+            server.setPassword("xDeeKjpRMB");
             server.setPortNumber(3306);
-            server.setDatabaseName("master_table");
+            server.setDatabaseName("sql12183731");
             Connection koneksi = server.getConnection();
             JasperViewer jp = new JasperViewer(JasperFillManager.fillReport(JasperCompileManager.compileReport("./laporan/data_barang.jrxml"),null,koneksi),false);
             jp.setTitle("DATA BARANG");
@@ -533,11 +533,11 @@ public class Admin extends javax.swing.JPanel {
     private void CetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CetakActionPerformed
         try {
             MysqlDataSource server = new MysqlDataSource();
-            server.setServerName("localhost");
-            server.setUser("root");
-            server.setPassword("");
+            server.setServerName("sql12.freemysqlhosting.net");
+            server.setUser("sql12183731");
+            server.setPassword("xDeeKjpRMB");
             server.setPortNumber(3306);
-            server.setDatabaseName("master_table");
+            server.setDatabaseName("sql12183731");
             Connection koneksi = server.getConnection();
             JasperViewer jp = new JasperViewer(JasperFillManager.fillReport(JasperCompileManager.compileReport("./laporan/data_user.jrxml"),null,koneksi),false);
             jp.setTitle("DATA USER");
