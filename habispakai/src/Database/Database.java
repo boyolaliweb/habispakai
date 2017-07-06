@@ -41,12 +41,26 @@ public class Database {
             System.out.println(e);
         }
         try {
+            con = DriverManager.getConnection("jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12183731", "sql12183731", "xDeeKjpRMB");
+        } catch (Exception e) {
+            System.out.println("joss");
+            System.out.println(e);
+        }
+    }
+    
+    /*public Database() {
+        try {
+            Class.forName("org.gjt.mm.mysql.Driver");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        try {
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/master_table", dbUser, dbPass);
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-
+    }*/
+    
     public ResultSet getData(String SQLString) {
         try {
             stmt = con.createStatement();
