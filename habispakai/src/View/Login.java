@@ -37,7 +37,7 @@ public class Login extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(68, 68, 68));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
