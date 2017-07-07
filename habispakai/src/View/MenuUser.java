@@ -290,7 +290,7 @@ public class MenuUser extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        Barang.addTab("Transaksi", jPanel4);
+        Barang.addTab("Transaksi Masuk", jPanel4);
 
         jPanel3.setBackground(new java.awt.Color(102, 153, 255));
 

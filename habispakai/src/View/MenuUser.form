@@ -243,8 +243,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Transaksi">
-                <Property name="tabTitle" type="java.lang.String" value="Transaksi"/>
+              <JTabbedPaneConstraints tabName="Transaksi Masuk">
+                <Property name="tabTitle" type="java.lang.String" value="Transaksi Masuk"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
