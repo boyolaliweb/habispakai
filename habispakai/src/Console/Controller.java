@@ -201,15 +201,17 @@ public class Controller extends MouseAdapter implements ActionListener{
             }else if(source.equals(ad.getNCari())){
                 if(ad.getNotaTanggal()==null&&ad.getNId().equals("")){
                    JOptionPane.showMessageDialog(null, "Inputan tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE);
-                }else if (ad.getNotaTanggal()==null && model.getListNota(null, Long.parseLong(ad.getNId()),ad.getNKet())==null){
+                }else if (ad.getNotaTanggal()==null && ad.getNotaTanggal2()==null && model.getListNota(null, null,Long.parseLong(ad.getNId()),ad.getNKet())==null){
                    JOptionPane.showMessageDialog(null, "Data Dengan ID User "+ad.getNId()+" Tidak ditemukan\nCoba Ubah Transaksi", "Peringatan", JOptionPane.ERROR_MESSAGE);
-                }else if (ad.getNotaTanggal()==null && !ad.getNId().equals("")){
-                   ad.setListNota(model.getListNota(null,Long.parseLong(ad.getNId()),ad.getNKet()));
-                }else if(model.getListNota(ad.getNotaTanggal(), 0,ad.getNKet())==null){
+                }else if (ad.getNotaTanggal()==null && ad.getNotaTanggal2()==null &&!ad.getNId().equals("")){
+                   ad.setListNota(model.getListNota(null,null,Long.parseLong(ad.getNId()),ad.getNKet()));
+                }else if(ad.getNotaTanggal2()==null &&model.getListNota(ad.getNotaTanggal(),null, 0,ad.getNKet())==null){
                    JOptionPane.showMessageDialog(null, "Data Dengan Tanggal "+ad.getTanggal()+" Tidak ditemukan", "Peringatan", JOptionPane.ERROR_MESSAGE);
-                }else if (ad.getNotaTanggal()!=null && ad.getNId().equals("")){
-                    ad.setListNota(model.getListNota(ad.getNotaTanggal(),0,ad.getNKet()));
-               }else
+                }else if (ad.getNotaTanggal()!=null && ad.getNotaTanggal2()==null && ad.getNId().equals("")){
+                    ad.setListNota(model.getListNota(ad.getNotaTanggal(),null,0,ad.getNKet()));
+                } else if (ad.getNotaTanggal()!=null && ad.getNotaTanggal2() !=null){
+                    ad.setListNota(model.getListNota(ad.getNotaTanggal(),ad.getNotaTanggal2(),0,ad.getNKet()));
+                }else
                    JOptionPane.showMessageDialog(null, "PILIH SALAH SATU METODE PENCARIAN", "Peringatan", JOptionPane.ERROR_MESSAGE);
             }else if(source.equals(ad.getBtambah())){
                 currentView = "5";

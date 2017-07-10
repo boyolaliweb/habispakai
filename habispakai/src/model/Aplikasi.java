@@ -103,12 +103,14 @@ public class Aplikasi {
         }
         return null;
     }
-    public String[][] getListNota(java.util.Date tgl,long id,String i){
-        if (tgl!=null){
+    public String[][] getListNota(java.util.Date tgl,java.util.Date tgl2,long id,String i){
+        if (tgl!=null && tgl2==null){
             return d.readNota(tgl,i);
         }
         else if (d.cekidNota(id,i) && id!=0){
             return d.readNota2(id, i);
+        } else if (tgl!= null && tgl2!= null){
+            return d.readNota3(tgl, tgl2);
         }
         return null;
     }

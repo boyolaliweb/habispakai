@@ -27,7 +27,7 @@ import model.User;
  */
 public class Database {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-    DateFormat df2 = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+    DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
     private String dbUser = "root";
     private String dbPass = "";
     private Statement stmt = null;
@@ -285,7 +285,7 @@ public class Database {
         ResultSet rs = getData(s);
         try {
             while(rs.next()){
-                if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl)) && rs.getString("total_barang").substring(0, 1).equals(i)){
+                if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl)) && rs.getString("total_barang").substring(0,1).equals(i)){
                     out[n][0] = Long.toString(rs.getLong("id"));
                     out[n][1] = rs.getString("total_barang");
                     out[n][2] = rs.getString("total_harga");
@@ -293,6 +293,27 @@ public class Database {
                     out[n][4] = rs.getString("user_id");
                     n++;
                 }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
+    }
+    public String[][] readNota3(java.util.Date tgl,java.util.Date tgl2){
+        int n = 0;
+        long x = makeidNota();
+        String out[][] = new String[(int) x][5];
+        String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '"+df2.format(tgl)+"' AND '"+df2.format(tgl2)+"';";
+        //String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '2017-07-05 17:51:02' AND '2017-07-09 17:27:04';";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
