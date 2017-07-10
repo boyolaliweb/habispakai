@@ -287,7 +287,7 @@ public class Database {
             while(rs.next()){
                 if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl)) && rs.getString("total_barang").substring(0,1).equals(i)){
                     out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
+                    out[n][1] = rs.getString("total_barang").substring(1);
                     out[n][2] = rs.getString("total_harga");
                     out[n][3] = rs.getString("waktu_trx");
                     out[n][4] = rs.getString("user_id");
@@ -310,7 +310,7 @@ public class Database {
             while(rs.next()){
                 if (rs.getLong("id")==id && rs.getString("total_barang").substring(0, 1).equals(i)){
                     out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
+                    out[n][1] = rs.getString("total_barang").substring(1);
                     out[n][2] = rs.getString("total_harga");
                     out[n][3] = rs.getString("waktu_trx");
                     out[n][4] = rs.getString("user_id");
@@ -332,7 +332,7 @@ public class Database {
         try {
             while(rs.next()){
                     out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
+                    out[n][1] = rs.getString("total_barang").substring(1);
                     out[n][2] = rs.getString("total_harga");
                     out[n][3] = rs.getString("waktu_trx");
                     out[n][4] = rs.getString("user_id");
@@ -353,7 +353,7 @@ public class Database {
             while(rs.next()){
                 if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl))){
                     out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
+                    out[n][1] = rs.getString("total_barang").substring(1);
                     out[n][2] = rs.getString("total_harga");
                     out[n][3] = rs.getString("waktu_trx");
                     out[n][4] = rs.getString("user_id");
@@ -376,7 +376,7 @@ public class Database {
             while(rs.next()){
                 if (rs.getString("total_barang").substring(0,1).equals(i)){
                     out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
+                    out[n][1] = rs.getString("total_barang").substring(1);
                     out[n][2] = rs.getString("total_harga");
                     out[n][3] = rs.getString("waktu_trx");
                     out[n][4] = rs.getString("user_id");
