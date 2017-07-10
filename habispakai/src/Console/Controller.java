@@ -84,7 +84,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         
         mainPanel = view.getMainPanel();
         mainPanel.add(L,"0");
-        mainPanel.add(ad,"1");
+        //mainPanel.add(ad,"1");
         mainPanel.add(iu,"2");
         mainPanel.add(eu,"3");
         mainPanel.add(mu,"4");
@@ -138,6 +138,10 @@ public class Controller extends MouseAdapter implements ActionListener{
                 if (L.getIdLogin().equals("")||L.getPassLogin().equals("")){
                         JOptionPane.showMessageDialog(null, "Username dan Password tidak boleh kosong", "Peringatan", JOptionPane.ERROR_MESSAGE); 
                     } else if (L.getIdLogin().equals("admin") && L.getPassLogin().equals("admin")){
+                        ad = new Admin();
+                        ad.addListener(this);
+                        ad.addAdapter(this);
+                        mainPanel.add(ad,"1");
                         currentView="1";
                         ad.setListUser(model.getListOutUser());
                         ad.setListBarang(model.getListOutBarang());
@@ -259,11 +263,12 @@ public class Controller extends MouseAdapter implements ActionListener{
                     view.getCardLayout().show(mainPanel, currentView);
             }else if(source.equals(ad.getNDetail())){
                 if(idNota==null){
-                   JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Ubah", "Peringatan", JOptionPane.ERROR_MESSAGE);
+                   JOptionPane.showMessageDialog(null, "Pilih Data Yang akan di Dilihat", "Peringatan", JOptionPane.ERROR_MESSAGE);
                 }else{
                     model.loadTransaksi(idNota);
                     currentView="7";
                     dn.setUser(idUser);
+                    dn.setTransaksi(model.lihatStatus(Long.parseLong(idNota)));
                     dn.setSubtotal(model.getTotalTransaksi2());
                     dn.setListTransaksi(model.getListTransaksi2());
                     view.getCardLayout().show(mainPanel, currentView);

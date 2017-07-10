@@ -299,40 +299,6 @@ public class Database {
         }
         return out;
     }
-    public String[][] readNota3(java.util.Date tgl,java.util.Date tgl2){
-        int n = 0;
-        long x = makeidNota();
-        String out[][] = new String[(int) x][5];
-        String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '"+df2.format(tgl)+"' AND '"+df2.format(tgl2)+"';";
-        //String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '2017-07-05 17:51:02' AND '2017-07-09 17:27:04';";
-        ResultSet rs = getData(s);
-        try {
-            while(rs.next()){
-                    out[n][0] = Long.toString(rs.getLong("id"));
-                    out[n][1] = rs.getString("total_barang");
-                    out[n][2] = rs.getString("total_harga");
-                    out[n][3] = rs.getString("waktu_trx");
-                    out[n][4] = rs.getString("user_id");
-                    n++;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return out;
-    }
-    public boolean cekidNota(long id, String i){
-        String s = "select id, total_barang, user_id from nota";
-        ResultSet rs = getData(s);
-        try {
-            while(rs.next()){
-                if (rs.getLong("id")==id && rs.getString("total_barang").substring(0, 1).equals(i))
-                    return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
     public String[][] readNota2(long id, String i){
         int n = 0;
         Long[] z = null;
@@ -356,6 +322,99 @@ public class Database {
         }
         return out;
     }
+    public String[][] readNota3(java.util.Date tgl,java.util.Date tgl2){
+        int n = 0;
+        long x = makeidNota();
+        String out[][] = new String[(int) x][5];
+        String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '"+df2.format(tgl)+"' AND '"+df2.format(tgl2)+"';";
+        //String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '2017-07-05 17:51:02' AND '2017-07-09 17:27:04';";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
+    }
+    public String[][] readNota4(java.util.Date tgl){
+        int n = 0;
+        long x = makeidNota();
+        String out[][] = new String[(int) x][5];
+        String s = "select id, total_barang, total_harga, waktu_trx, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (df.format(rs.getDate("waktu_trx")).equals(df.format(tgl))){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
+    }
+    public String[][] readNota5(java.util.Date tgl,java.util.Date tgl2,String i){
+        int n = 0;
+        long x = makeidNota();
+        String out[][] = new String[(int) x][5];
+        String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '"+df2.format(tgl)+"' AND '"+df2.format(tgl2)+"';";
+        //String s = "select `id`, `total_barang`, `total_harga`, `waktu_trx`, `user_id` from `nota` where `waktu_trx` BETWEEN '2017-07-05 17:51:02' AND '2017-07-09 17:27:04';";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (rs.getString("total_barang").substring(0,1).equals(i)){
+                    out[n][0] = Long.toString(rs.getLong("id"));
+                    out[n][1] = rs.getString("total_barang");
+                    out[n][2] = rs.getString("total_harga");
+                    out[n][3] = rs.getString("waktu_trx");
+                    out[n][4] = rs.getString("user_id");
+                    n++;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
+    }
+    public boolean cekidNota(long id, String i){
+        String s = "select id, total_barang, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (rs.getLong("id")==id && rs.getString("total_barang").substring(0, 1).equals(i))
+                    return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    public String cekidNota2(long id){
+        String s = "select id, total_barang, user_id from nota";
+        ResultSet rs = getData(s);
+        try {
+            while(rs.next()){
+                if (rs.getLong("id")==id)
+                    return rs.getString("total_barang").substring(0, 1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+    
     public boolean cekidLog(long id,int i){
         String s = "select id, id_user, even, user_id, time from log";
         ResultSet rs = getData(s);

@@ -336,7 +336,7 @@ public class Admin extends javax.swing.JPanel {
         nDetail.setBackground(new java.awt.Color(255, 223, 19));
         nDetail.setText("Detail");
 
-        nket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masuk", "Keluar" }));
+        nket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masuk", "Keluar", "Semua" }));
         nket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nketActionPerformed(evt);
@@ -350,7 +350,7 @@ public class Admin extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("DAFTAR NOTA");
 
-        mCari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item", "Rentang All" }));
+        mCari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Date", "Rentang" }));
         mCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mCariActionPerformed(evt);
@@ -600,12 +600,19 @@ public class Admin extends javax.swing.JPanel {
     private void mCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCariActionPerformed
         if (mCari.getSelectedIndex() == 0){
             nTanggal2.setEnabled(false);
-            nket.setEnabled(true);
             nIdnota.setEnabled(true);
+            nTanggal.setEnabled(false);
+            nket.setEnabled(false);
         } else if (mCari.getSelectedIndex() == 1){
-             nTanggal2.setEnabled(true);
-             nket.setEnabled(false);
-             nIdnota.setEnabled(false);
+            nTanggal2.setEnabled(false);
+            nIdnota.setEnabled(false);
+            nTanggal.setEnabled(true);
+            nket.setEnabled(true);
+        }else if (mCari.getSelectedIndex() == 2){
+            nTanggal2.setEnabled(true);
+            nIdnota.setEnabled(false);
+            nTanggal.setEnabled(true);
+            nket.setEnabled(true);
         }
     }//GEN-LAST:event_mCariActionPerformed
 
@@ -801,8 +808,10 @@ public class Admin extends javax.swing.JPanel {
     public String getNKet(){
         if (nket.getSelectedIndex()== 0){
             return "+";
+        } else if (nket.getSelectedIndex() == 1){
+            return "-";
         }
-        return "-";
+        return "x";
     }
     public void setListNota(String[][] list){
         String[] judul = {"Id","Total_Barang","Total_Harga","Waktu","User_id"};
@@ -836,6 +845,8 @@ public class Admin extends javax.swing.JPanel {
     }
     public void addListener(ActionListener e){
         nTanggal2.setEnabled(false);
+        nTanggal.setEnabled(false);
+        nket.setEnabled(false);
         Utambah.addActionListener(e);
         Uedit.addActionListener(e);
         Uhapus.addActionListener(e);

@@ -104,12 +104,15 @@ public class Aplikasi {
         return null;
     }
     public String[][] getListNota(java.util.Date tgl,java.util.Date tgl2,long id,String i){
-        if (tgl!=null && tgl2==null){
+        if (tgl!=null && tgl2==null && !i.equals("x")){
             return d.readNota(tgl,i);
-        }
-        else if (d.cekidNota(id,i) && id!=0){
+        }else if (tgl!=null && tgl2==null){
+            return d.readNota4(tgl);
+        }else if (d.cekidNota(id,i) && id!=0){
             return d.readNota2(id, i);
-        } else if (tgl!= null && tgl2!= null){
+        }else if (tgl!= null && tgl2!= null && !i.equals("x")){
+            return d.readNota5(tgl, tgl2, i);
+        } else if(tgl!= null && tgl2!= null){
             return d.readNota3(tgl, tgl2);
         }
         return null;
@@ -267,5 +270,11 @@ public class Aplikasi {
             return "Stok tidak cukup, jumlah stok saat ini "+d.cekStok(cariBarang3(namaBarang).getId());
         }
         return "";
+    }
+    public String lihatStatus(long id){
+        if (d.cekidNota2(id).equals("-")){
+            return "Masuk";
+        }else 
+            return "Keluar";
     }
 }
