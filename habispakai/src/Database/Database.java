@@ -34,7 +34,7 @@ public class Database {
     private Connection con = null;
     private ResultSet rs = null;
     
-    public Database() {
+    /*public Database() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (Exception e) {
@@ -46,9 +46,9 @@ public class Database {
             System.out.println("joss");
             System.out.println(e);
         }
-    }
+    }*/
     
-    /*public Database() {
+    public Database() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (Exception e) {
@@ -59,7 +59,7 @@ public class Database {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }*/
+    }
     
     public ResultSet getData(String SQLString) {
         try {
